@@ -88,7 +88,6 @@ final class Photo {
 		// Only process the first photo in the array
 		$file = $files[0];
 
-
 		// Check if file exceeds the upload_max_filesize directive
 		if ($file['error']===UPLOAD_ERR_INI_SIZE) {
 			Log::error(Database::get(), __METHOD__, __LINE__, 'The uploaded file exceeds the upload_max_filesize directive in php.ini');
@@ -133,16 +132,9 @@ final class Photo {
 		}
 
 		// Verify image
-		//$type = @exif_imagetype($file['tmp_name']);
-		$type = getimagesize($file['tmp_name']);
-
-		$type = $type['mime'];
-
-		$type = str_replace('image/', '.', $type);
-		$type = (string) $type;
-		
+		$type = @exif_imagetype($file['tmp_name']);
 		if (!in_array($type, self::$validTypes, true)) {
-			Log::error(Database::get(), __METHOD__, __LINE__, 'Photo type not supported ');
+			Log::error(Database::get(), __METHOD__, __LINE__, 'Photo type not supported');
 			if ($returnOnError===true) return false;
 			Response::error('Photo type not supported!');
 		}

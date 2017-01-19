@@ -1,4 +1,9 @@
 Options -Indexes
 
 RewriteEngine on
+
+# Regla para permitir acceder a la carpeta con el Gestor de Imagenes, externo a Yii2
+RewriteRule ^(cliente)($|/) - [L]
+
+# Regla para redireccionar cualquier a la carpeta web
 RewriteRule ^(.*)$ web/$1 [L]
