@@ -79,7 +79,7 @@ albums._createSmartAlbums = function(data) {
 
 	data.starred = {
 		id      : 'f',
-		title   : 'Starred',
+		title   : 'Favoritas',
 		sysdate : data.starred.num + ' photos',
 		star    : '1',
 		thumbs  : data.starred.thumbs
@@ -87,7 +87,7 @@ albums._createSmartAlbums = function(data) {
 
 	data.public = {
 		id      : 's',
-		title   : 'Public',
+		title   : 'Publicas',
 		sysdate : data.public.num + ' photos',
 		public  : '1',
 		thumbs  : data.public.thumbs
@@ -95,7 +95,7 @@ albums._createSmartAlbums = function(data) {
 
 	data.recent = {
 		id      : 'r',
-		title   : 'Recent',
+		title   : 'Recientes',
 		sysdate : data.recent.num + ' photos',
 		recent  : '1',
 		thumbs  : data.recent.thumbs

@@ -15,7 +15,7 @@ view.albums = {
 
 	title: function() {
 
-		lychee.setTitle('Albums', false)
+		lychee.setTitle('Galería', false)
 
 	},
 
@@ -30,18 +30,23 @@ view.albums = {
 
 			// Smart Albums
 			if (lychee.publicMode===false) {
-
 				albums.parse(albums.json.smartalbums.unsorted)
 				albums.parse(albums.json.smartalbums.public)
-				albums.parse(albums.json.smartalbums.starred)
-				albums.parse(albums.json.smartalbums.recent)
 
-				smartData = build.divider('Smart Albums') + build.album(albums.json.smartalbums.unsorted) + build.album(albums.json.smartalbums.public) + build.album(albums.json.smartalbums.starred) + build.album(albums.json.smartalbums.recent)
+				// Original
+				// smartData = build.divider('Smart Albums') + build.album(albums.json.smartalbums.unsorted) + build.album(albums.json.smartalbums.public) + build.album(albums.json.smartalbums.starred) + build.album(albums.json.smartalbums.recent)
+				
+				// Custom by Homebook
+				smartData = build.divider('Nuestros Proyectos') + build.album(albums.json.smartalbums.public) 
 
 			}
 
 			// Albums
 			if (albums.json.albums && albums.json.num!==0) {
+
+				// Custom by Homebook
+				albums.parse(albums.json.smartalbums.starred)
+				albums.parse(albums.json.smartalbums.recent)
 
 				$.each(albums.json.albums, function() {
 					albums.parse(this)
@@ -49,7 +54,7 @@ view.albums = {
 				})
 
 				// Add divider
-				if (lychee.publicMode===false) albumsData = build.divider('Albums') + albumsData
+				if (lychee.publicMode===false) albumsData = build.divider('Mis Álbumes') + build.album(albums.json.smartalbums.starred) + build.album(albums.json.smartalbums.recent) + albumsData
 
 			}
 
@@ -116,13 +121,13 @@ view.album = {
 
 			switch (album.getID()) {
 				case 'f':
-					lychee.setTitle('Starred', false)
+					lychee.setTitle('Favoritas', false)
 					break
 				case 's':
-					lychee.setTitle('Public', false)
+					lychee.setTitle('Publicas', false)
 					break
 				case 'r':
-					lychee.setTitle('Recent', false)
+					lychee.setTitle('Recientes', false)
 					break
 				case '0':
 					lychee.setTitle('Unsorted', false)
