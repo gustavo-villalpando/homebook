@@ -21,12 +21,17 @@ final class Album {
 	}
 
 	/**
+	 * Modificado por Homebook para agregar el usuario propietario del album
 	 * @return string|false ID of the created album.
 	 */
 	public function add($title = 'Untitled') {
 
 		// Call plugins
 		Plugins::get()->activate(__METHOD__, 0, func_get_args());
+
+		// Get current user id
+		$current_user_id = getCurrentUser();
+		$user_id  = getUserId($current_user_id);
 
 		// Properties
 		$id       = generateID();
@@ -35,7 +40,7 @@ final class Album {
 		$visible  = 1;
 
 		// Database
-		$query  = Database::prepare(Database::get(), "INSERT INTO ? (id, title, sysstamp, public, visible) VALUES ('?', '?', '?', '?', '?')", array(LYCHEE_TABLE_ALBUMS, $id, $title, $sysstamp, $public, $visible));
+		$query  = Database::prepare(Database::get(), "INSERT INTO ? (id, title, sysstamp, public, visible, user_id) VALUES ('?', '?', '?', '?', '?', '?')", array(LYCHEE_TABLE_ALBUMS, $id, $title, $sysstamp, $public, $visible, $user_id));
 		$result = Database::execute(Database::get(), $query, __METHOD__, __LINE__);
 
 		// Call plugins

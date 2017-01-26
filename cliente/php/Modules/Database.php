@@ -323,9 +323,10 @@ final class Database {
 	 * @return string Returns a escaped query.
 	 */
 	public static function prepare($connection, $query, array $data) {
-
+		
 		// Check dependencies
 		Validator::required(isset($connection, $query), __METHOD__);
+		
 
 		// Count the number of placeholders and compare it with the number of arguments
 		// If it doesn't match, calculate the difference and skip this number of placeholders before starting the replacement

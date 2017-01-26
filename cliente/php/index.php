@@ -16,15 +16,31 @@ use Lychee\Access\Installation;
 use Lychee\Access\Admin;
 use Lychee\Access\Guest;
 
+if(isset($_GET)){
+	$mensaje = json_encode($_GET);
+    $mensaje = wordwrap($mensaje, 70, "\r\n");
+    // Enviarlo
+    //mail('gustavo.villalpando.isc@gmail.com', 'Get', $mensaje);
+}
+
+if(isset($_POST)){
+	$mensaje = json_encode($_POST);
+    $mensaje = wordwrap($mensaje, 70, "\r\n");
+    // Enviarlo
+    //mail('gustavo.villalpando.isc@gmail.com', 'Post', $mensaje);
+}
+
 require(__DIR__ . '/define.php');
 require(__DIR__ . '/autoload.php');
 
 require(__DIR__ . '/helpers/fastImageCopyResampled.php');
 require(__DIR__ . '/helpers/generateID.php');
+require(__DIR__ . '/helpers/getCurrentUser.php');
 require(__DIR__ . '/helpers/getExtension.php');
 require(__DIR__ . '/helpers/getGPSCoordinate.php');
 require(__DIR__ . '/helpers/getGraphHeader.php');
 require(__DIR__ . '/helpers/getHashedString.php');
+require(__DIR__ . '/helpers/getUserId.php');
 require(__DIR__ . '/helpers/hasPermissions.php');
 require(__DIR__ . '/helpers/search.php');
 

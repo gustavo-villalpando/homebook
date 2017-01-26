@@ -38,10 +38,10 @@ function defineTablePrefix($dbTablePrefix) {
 	if ($dbTablePrefix!=='') $dbTablePrefix .= '_';
 
 	// Define tables
-	define('LYCHEE_TABLE_ALBUMS', $dbTablePrefix . 'lychee_albums');
-	define('LYCHEE_TABLE_LOG', $dbTablePrefix . 'lychee_log');
-	define('LYCHEE_TABLE_PHOTOS', $dbTablePrefix . 'lychee_photos');
-	define('LYCHEE_TABLE_SETTINGS', $dbTablePrefix . 'lychee_settings');
+	define('LYCHEE_TABLE_ALBUMS', $dbTablePrefix . 'albums');
+	define('LYCHEE_TABLE_LOG', $dbTablePrefix . 'log');
+	define('LYCHEE_TABLE_PHOTOS', $dbTablePrefix . 'photos');
+	define('LYCHEE_TABLE_SETTINGS', $dbTablePrefix . 'settings');
 
 }
 

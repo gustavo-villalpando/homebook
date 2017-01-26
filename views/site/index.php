@@ -15,6 +15,10 @@ $this->title = 'My Yii Application';
     </div>
 
     <div class="body-content">
+        <form action="/homebook/cliente" method="post">
+            <input type="hidden" value="1" name="pruebapost">
+            <input type="submit" value="Enviar">
+        </form>
 
         <div class="row">
             <div class="col-lg-4">
