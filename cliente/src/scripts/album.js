@@ -193,24 +193,24 @@ album.delete = function(albumIDs) {
 
 		let albumTitle = ''
 
-		action.title = 'Delete Album and Photos'
-		cancel.title = 'Keep Album'
+		action.title = 'Eliminar Álbum y Fotografías'
+		cancel.title = 'Dejar Álbum'
 
 		// Get title
 		if (album.json)       albumTitle = album.json.title
 		else if (albums.json) albumTitle = albums.getByID(albumIDs).title
 
 		// Fallback for album without a title
-		if (albumTitle==='') albumTitle = 'Untitled'
+		if (albumTitle==='') albumTitle = 'Sin título'
 
-		msg = lychee.html`<p>Are you sure you want to delete the album '$${ albumTitle }' and all of the photos it contains? This action can't be undone!</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres borrar el álbum '$${ albumTitle }' y todas las fotos que contiene? ¡Ojó!, Esta acción es irreversible.</p>`
 
 	} else {
 
-		action.title = 'Delete Albums and Photos'
-		cancel.title = 'Keep Albums'
+		action.title = 'Eliminar Álbumes y Fotografías'
+		cancel.title = 'Dejar Álbumes'
 
-		msg = lychee.html`<p>Are you sure you want to delete all $${ albumIDs.length } selected albums and all of the photos they contain? This action can't be undone!</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres borrar los $${ albumIDs.length } álbumes seleccionados y todas las fotos que contienen? ¡Ojó!, Esta acción es irreversible.</p>`
 
 	}
 

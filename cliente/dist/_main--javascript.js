@@ -1,7 +1,7 @@
 'use strict';
 
-var _templateObject = _taggedTemplateLiteral(['<p>Are you sure you want to delete the album \'$', '\' and all of the photos it contains? This action can\'t be undone!</p>'], ['<p>Are you sure you want to delete the album \'$', '\' and all of the photos it contains? This action can\'t be undone!</p>']),
-    _templateObject2 = _taggedTemplateLiteral(['<p>Are you sure you want to delete all $', ' selected albums and all of the photos they contain? This action can\'t be undone!</p>'], ['<p>Are you sure you want to delete all $', ' selected albums and all of the photos they contain? This action can\'t be undone!</p>']),
+var _templateObject = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres borrar el \xE1lbum \'$', '\' y todas las fotos que contiene? \xA1Oj\xF3!, Esta acci\xF3n es irreversible.</p>'], ['<p>\xBFEst\xE1s seguro que quieres borrar el \xE1lbum \'$', '\' y todas las fotos que contiene? \xA1Oj\xF3!, Esta acci\xF3n es irreversible.</p>']),
+    _templateObject2 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres borrar los $', ' \xE1lbumes seleccionados y todas las fotos que contienen? \xA1Oj\xF3!, Esta acci\xF3n es irreversible.</p>'], ['<p>\xBFEst\xE1s seguro que quieres borrar los $', ' \xE1lbumes seleccionados y todas las fotos que contienen? \xA1Oj\xF3!, Esta acci\xF3n es irreversible.</p>']),
     _templateObject3 = _taggedTemplateLiteral(['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'$', '\'>'], ['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'$', '\'>']),
     _templateObject4 = _taggedTemplateLiteral(['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>'], ['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>']),
     _templateObject5 = _taggedTemplateLiteral(['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>'], ['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>']),
@@ -227,20 +227,20 @@ album.delete = function (albumIDs) {
 
 		var albumTitle = '';
 
-		action.title = 'Delete Album and Photos';
-		cancel.title = 'Keep Album';
+		action.title = 'Eliminar Álbum y Fotografías';
+		cancel.title = 'Dejar Álbum';
 
 		// Get title
 		if (album.json) albumTitle = album.json.title;else if (albums.json) albumTitle = albums.getByID(albumIDs).title;
 
 		// Fallback for album without a title
-		if (albumTitle === '') albumTitle = 'Untitled';
+		if (albumTitle === '') albumTitle = 'Sin título';
 
 		msg = lychee.html(_templateObject, albumTitle);
 	} else {
 
-		action.title = 'Delete Albums and Photos';
-		cancel.title = 'Keep Albums';
+		action.title = 'Eliminar Álbumes y Fotografías';
+		cancel.title = 'Dejar Álbumes';
 
 		msg = lychee.html(_templateObject2, albumIDs.length);
 	}
