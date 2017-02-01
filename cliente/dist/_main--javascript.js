@@ -6,8 +6,8 @@ var _templateObject = _taggedTemplateLiteral(['<p>Are you sure you want to delet
     _templateObject4 = _taggedTemplateLiteral(['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>'], ['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>']),
     _templateObject5 = _taggedTemplateLiteral(['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>'], ['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>']),
     _templateObject6 = _taggedTemplateLiteral(['<p>Please enter a description for this album: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>'], ['<p>Please enter a description for this album: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>']),
-    _templateObject7 = _taggedTemplateLiteral(['<p>Are you sure you want to merge the album \'$', '\' into the album \'$', '\'?</p>'], ['<p>Are you sure you want to merge the album \'$', '\' into the album \'$', '\'?</p>']),
-    _templateObject8 = _taggedTemplateLiteral(['<p>Are you sure you want to merge all selected albums into the album \'$', '\'?</p>'], ['<p>Are you sure you want to merge all selected albums into the album \'$', '\'?</p>']),
+    _templateObject7 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres mezclar el \xE1lbum \'$', '\' con el \xE1lbum \'$', '\'?</p>'], ['<p>\xBFEst\xE1s seguro que quieres mezclar el \xE1lbum \'$', '\' con el \xE1lbum \'$', '\'?</p>']),
+    _templateObject8 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres mezclar todos los \xE1lbumes seleccionados con el \xE1lbum  \'$', '\'?</p>'], ['<p>\xBFEst\xE1s seguro que quieres mezclar todos los \xE1lbumes seleccionados con el \xE1lbum  \'$', '\'?</p>']),
     _templateObject9 = _taggedTemplateLiteral(['<svg class=\'iconic $', '\'><use xlink:href=\'#$', '\' /></svg>'], ['<svg class=\'iconic $', '\'><use xlink:href=\'#$', '\' /></svg>']),
     _templateObject10 = _taggedTemplateLiteral(['<div class=\'divider\'><h1>$', '</h1></div>'], ['<div class=\'divider\'><h1>$', '</h1></div>']),
     _templateObject11 = _taggedTemplateLiteral(['<div id=\'$', '\' class=\'edit\'>', '</div>'], ['<div id=\'$', '\' class=\'edit\'>', '</div>']),
@@ -564,12 +564,12 @@ album.merge = function (albumIDs) {
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Merge Albums',
+				title: 'Mezclar Álbumes',
 				fn: action,
 				class: 'red'
 			},
 			cancel: {
-				title: "Don't Merge",
+				title: "No Mezclar",
 				fn: basicModal.close
 			}
 		}
@@ -998,13 +998,13 @@ contextMenu.albumMulti = function (albumIDs, e) {
 	// Show merge-item when there's more than one album
 	var showMerge = albums.json && albums.json.albums && Object.keys(albums.json.albums).length > 1;
 
-	var items = [{ title: build.iconic('pencil') + 'Renombrar Todos', fn: function fn() {
+	var items = [{ title: build.iconic('pencil') + 'Renombrar todos', fn: function fn() {
 			return album.setTitle(albumIDs);
 		} }, { title: build.iconic('collapse-left') + 'Mezclar todos', visible: showMerge && autoMerge, fn: function fn() {
 			return album.merge(albumIDs);
 		} }, { title: build.iconic('collapse-left') + 'Mezclar', visible: showMerge && !autoMerge, fn: function fn() {
 			basicContext.close();contextMenu.mergeAlbum(albumIDs[0], e);
-		} }, { title: build.iconic('trash') + 'Borrar Todos', fn: function fn() {
+		} }, { title: build.iconic('trash') + 'Borrar todos', fn: function fn() {
 			return album.delete(albumIDs);
 		} }];
 

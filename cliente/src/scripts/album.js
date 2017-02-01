@@ -561,11 +561,11 @@ album.merge = function(albumIDs) {
 		// Fallback for second album without a title
 		if (sTitle==='') sTitle = 'Untitled'
 
-		msg = lychee.html`<p>Are you sure you want to merge the album '$${ sTitle }' into the album '$${ title }'?</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres mezclar el álbum '$${ sTitle }' con el álbum '$${ title }'?</p>`
 
 	} else {
 
-		msg = lychee.html`<p>Are you sure you want to merge all selected albums into the album '$${ title }'?</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres mezclar todos los álbumes seleccionados con el álbum  '$${ title }'?</p>`
 
 	}
 
@@ -594,12 +594,12 @@ album.merge = function(albumIDs) {
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Merge Albums',
+				title: 'Mezclar Álbumes',
 				fn: action,
 				class: 'red'
 			},
 			cancel: {
-				title: "Don't Merge",
+				title: "No Mezclar",
 				fn: basicModal.close
 			}
 		}

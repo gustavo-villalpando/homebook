@@ -75,10 +75,10 @@ contextMenu.albumMulti = function(albumIDs, e) {
 	let showMerge = (albums.json && albums.json.albums && Object.keys(albums.json.albums).length>1)
 
 	let items = [
-		{ title: build.iconic('pencil') + 'Renombrar Todos', fn: () => album.setTitle(albumIDs) },
+		{ title: build.iconic('pencil') + 'Renombrar todos', fn: () => album.setTitle(albumIDs) },
 		{ title: build.iconic('collapse-left') + 'Mezclar todos', visible: showMerge && autoMerge, fn: () => album.merge(albumIDs) },
 		{ title: build.iconic('collapse-left') + 'Mezclar', visible: showMerge && !autoMerge, fn: () => { basicContext.close(); contextMenu.mergeAlbum(albumIDs[0], e) } },
-		{ title: build.iconic('trash') + 'Borrar Todos', fn: () => album.delete(albumIDs) }
+		{ title: build.iconic('trash') + 'Borrar todos', fn: () => album.delete(albumIDs) }
 	]
 
 	items.push()
