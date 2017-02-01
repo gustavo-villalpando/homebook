@@ -127,14 +127,14 @@ album.add = function() {
 	}
 
 	basicModal.show({
-		body: `<p>Enter a title for the new album: <input class='text' name='title' type='text' maxlength='50' placeholder='Title' value='Untitled'></p>`,
+		body: `<p>Ingresa el título para el nuevo album: <input class='text' name='title' type='text' maxlength='50' placeholder='Título' value='Título'></p>`,
 		buttons: {
 			action: {
-				title: 'Create Album',
+				title: 'Crear Album',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -286,20 +286,20 @@ album.setTitle = function(albumIDs) {
 
 	}
 
-	let input = lychee.html`<input class='text' name='title' type='text' maxlength='50' placeholder='Title' value='$${ oldTitle }'>`
+	let input = lychee.html`<input class='text' name='title' type='text' maxlength='50' placeholder='Título' value='$${ oldTitle }'>`
 
-	if (albumIDs.length===1) msg = lychee.html`<p>Enter a new title for this album: ${ input }</p>`
-	else                     msg = lychee.html`<p>Enter a title for all $${ albumIDs.length } selected albums: ${ input }</p>`
+	if (albumIDs.length===1) msg = lychee.html`<p>Ingresa el nuevo título para este álbum: ${ input }</p>`
+	else                     msg = lychee.html`<p>Ingresa el título para los $${ albumIDs.length } álbumes seleccionados: ${ input }</p>`
 
 	basicModal.show({
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Set Title',
+				title: 'Cambiar Título',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}

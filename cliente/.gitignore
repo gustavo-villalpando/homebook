@@ -13,7 +13,6 @@ uploads/thumb/*
 !uploads/medium/index.html
 !uploads/thumb/index.html
 
-plugins/*
 
 !plugins/Diagnostics/
 !plugins/Log/

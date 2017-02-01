@@ -52,9 +52,9 @@ contextMenu.album = function(albumID, e) {
 	let showMerge = (albums.json && albums.json.albums && Object.keys(albums.json.albums).length>1)
 
 	let items = [
-		{ title: build.iconic('pencil') + 'Rename', fn: () => album.setTitle([ albumID ]) },
-		{ title: build.iconic('collapse-left') + 'Merge', visible: showMerge, fn: () => { basicContext.close(); contextMenu.mergeAlbum(albumID, e) } },
-		{ title: build.iconic('trash') + 'Delete', fn: () => album.delete([ albumID ]) }
+		{ title: build.iconic('pencil') + 'Renombrar', fn: () => album.setTitle([ albumID ]) },
+		{ title: build.iconic('collapse-left') + 'Mezclar', visible: showMerge, fn: () => { basicContext.close(); contextMenu.mergeAlbum(albumID, e) } },
+		{ title: build.iconic('trash') + 'Borrar', fn: () => album.delete([ albumID ]) }
 	]
 
 	$('.album[data-id="' + albumID + '"]').addClass('active')
@@ -75,10 +75,10 @@ contextMenu.albumMulti = function(albumIDs, e) {
 	let showMerge = (albums.json && albums.json.albums && Object.keys(albums.json.albums).length>1)
 
 	let items = [
-		{ title: build.iconic('pencil') + 'Rename All', fn: () => album.setTitle(albumIDs) },
-		{ title: build.iconic('collapse-left') + 'Merge All', visible: showMerge && autoMerge, fn: () => album.merge(albumIDs) },
-		{ title: build.iconic('collapse-left') + 'Merge', visible: showMerge && !autoMerge, fn: () => { basicContext.close(); contextMenu.mergeAlbum(albumIDs[0], e) } },
-		{ title: build.iconic('trash') + 'Delete All', fn: () => album.delete(albumIDs) }
+		{ title: build.iconic('pencil') + 'Renombrar Todos', fn: () => album.setTitle(albumIDs) },
+		{ title: build.iconic('collapse-left') + 'Mezclar todos', visible: showMerge && autoMerge, fn: () => album.merge(albumIDs) },
+		{ title: build.iconic('collapse-left') + 'Mezclar', visible: showMerge && !autoMerge, fn: () => { basicContext.close(); contextMenu.mergeAlbum(albumIDs[0], e) } },
+		{ title: build.iconic('trash') + 'Borrar Todos', fn: () => album.delete(albumIDs) }
 	]
 
 	items.push()
@@ -161,13 +161,13 @@ contextMenu.photo = function(photoID, e) {
 	// in order to keep the selection
 
 	let items = [
-		{ title: build.iconic('star') + 'Star', fn: () => photo.setStar([ photoID ]) },
-		{ title: build.iconic('tag') + 'Tags', fn: () => photo.editTags([ photoID ]) },
+		{ title: build.iconic('star') + 'Favorita', fn: () => photo.setStar([ photoID ]) },
+		{ title: build.iconic('tag') + 'Etiquetar', fn: () => photo.editTags([ photoID ]) },
 		{ },
-		{ title: build.iconic('pencil') + 'Rename', fn: () => photo.setTitle([ photoID ]) },
-		{ title: build.iconic('layers') + 'Duplicate', fn: () => photo.duplicate([ photoID ]) },
-		{ title: build.iconic('folder') + 'Move', fn: () => { basicContext.close(); contextMenu.move([ photoID ], e) } },
-		{ title: build.iconic('trash') + 'Delete', fn: () => photo.delete([ photoID ]) }
+		{ title: build.iconic('pencil') + 'Renombrar', fn: () => photo.setTitle([ photoID ]) },
+		{ title: build.iconic('layers') + 'Duplicar', fn: () => photo.duplicate([ photoID ]) },
+		{ title: build.iconic('folder') + 'Mover', fn: () => { basicContext.close(); contextMenu.move([ photoID ], e) } },
+		{ title: build.iconic('trash') + 'Borrar', fn: () => photo.delete([ photoID ]) }
 	]
 
 	$('.photo[data-id="' + photoID + '"]').addClass('active')
