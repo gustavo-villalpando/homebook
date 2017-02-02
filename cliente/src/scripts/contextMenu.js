@@ -133,7 +133,7 @@ contextMenu.mergeAlbum = function(albumID, e) {
 			$.each(data.albums, function() {
 
 				if (!this.thumbs[0]) this.thumbs[0] = 'src/images/no_cover.svg'
-				if (this.title==='') this.title = 'Untitled'
+				if (this.title==='') this.title = 'Sin título'
 
 				let html = lychee.html`<img class='cover' width='16' height='16' src='$${ this.thumbs[0] }'><div class='title'>$${ this.title }</div>`
 
@@ -185,13 +185,13 @@ contextMenu.photoMulti = function(photoIDs, e) {
 	multiselect.stopResize()
 
 	let items = [
-		{ title: build.iconic('star') + 'Star All', fn: () => photo.setStar(photoIDs) },
-		{ title: build.iconic('tag') + 'Tag All', fn: () => photo.editTags(photoIDs) },
+		{ title: build.iconic('star') + 'Favoritas', fn: () => photo.setStar(photoIDs) },
+		{ title: build.iconic('tag') + 'Etiquetar todas', fn: () => photo.editTags(photoIDs) },
 		{ },
-		{ title: build.iconic('pencil') + 'Rename All', fn: () => photo.setTitle(photoIDs) },
-		{ title: build.iconic('layers') + 'Duplicate All', fn: () => photo.duplicate(photoIDs) },
-		{ title: build.iconic('folder') + 'Move All', fn: () => { basicContext.close(); contextMenu.move(photoIDs, e) } },
-		{ title: build.iconic('trash') + 'Delete All', fn: () => photo.delete(photoIDs) }
+		{ title: build.iconic('pencil') + 'Renombrar todas', fn: () => photo.setTitle(photoIDs) },
+		{ title: build.iconic('layers') + 'Duplicar todas', fn: () => photo.duplicate(photoIDs) },
+		{ title: build.iconic('folder') + 'Mover todas', fn: () => { basicContext.close(); contextMenu.move(photoIDs, e) } },
+		{ title: build.iconic('trash') + 'Borrar todas', fn: () => photo.delete(photoIDs) }
 	]
 
 	basicContext.show(items, e.originalEvent, contextMenu.close)
@@ -201,7 +201,7 @@ contextMenu.photoMulti = function(photoIDs, e) {
 contextMenu.photoTitle = function(albumID, photoID, e) {
 
 	let items = [
-		{ title: build.iconic('pencil') + 'Rename', fn: () => photo.setTitle([ photoID ]) }
+		{ title: build.iconic('pencil') + 'Renombrar', fn: () => photo.setTitle([ photoID ]) }
 	]
 
 	let data = album.json
@@ -213,7 +213,7 @@ contextMenu.photoTitle = function(albumID, photoID, e) {
 		// Generate list of albums
 		$.each(data.content, function(index) {
 
-			if (this.title==='') this.title = 'Untitled'
+			if (this.title==='') this.title = 'Sin título'
 
 			let html = lychee.html`<img class='cover' width='16' height='16' src='$${ this.thumbUrl }'><div class='title'>$${ this.title }</div>`
 
@@ -238,8 +238,8 @@ contextMenu.photoMore = function(photoID, e) {
 	let showDownload = lychee.publicMode===false || ((album.json && album.json.downloadable && album.json.downloadable==='1') && lychee.publicMode===true)
 
 	let items = [
-		{ title: build.iconic('fullscreen-enter') + 'Full Photo', fn: () => window.open(photo.getDirectLink()) },
-		{ title: build.iconic('cloud-download') + 'Download', visible: showDownload, fn: () => photo.getArchive(photoID) }
+		{ title: build.iconic('fullscreen-enter') + 'Ver en navegador', fn: () => window.open(photo.getDirectLink()) },
+		{ title: build.iconic('cloud-download') + 'Descargar', visible: showDownload, fn: () => photo.getArchive(photoID) }
 	]
 
 	basicContext.show(items, e.originalEvent)
@@ -256,7 +256,7 @@ contextMenu.move = function(photoIDs, e) {
 
 			// Show only 'Add album' when no album available
 			items = [
-				{ title: 'New Album', fn: album.add }
+				{ title: 'Nuevo Álbum', fn: album.add }
 			]
 
 		} else {
@@ -265,7 +265,7 @@ contextMenu.move = function(photoIDs, e) {
 			$.each(data.albums, function() {
 
 				if (!this.thumbs[0]) this.thumbs[0] = 'src/images/no_cover.svg'
-				if (this.title==='') this.title = 'Untitled'
+				if (this.title==='') this.title = 'Sin título'
 
 				let html = lychee.html`<img class='cover' width='16' height='16' src='$${ this.thumbs[0] }'><div class='title'>$${ this.title }</div>`
 

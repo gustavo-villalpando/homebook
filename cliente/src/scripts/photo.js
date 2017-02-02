@@ -197,7 +197,7 @@ photo.delete = function(photoIDs) {
 		else                 photoTitle = album.json.content[photoIDs].title
 
 		// Fallback for photos without a title
-		if (photoTitle==='') photoTitle = 'Untitled'
+		if (photoTitle==='') photoTitle = 'Sin título'
 
 	}
 
@@ -247,17 +247,17 @@ photo.delete = function(photoIDs) {
 
 	if (photoIDs.length===1) {
 
-		action.title = 'Delete Photo'
-		cancel.title = 'Keep Photo'
+		action.title = 'Eliminar Fotografía'
+		cancel.title = 'Dejar Fotografía'
 
-		msg = lychee.html`<p>Are you sure you want to delete the photo '$${ photoTitle }'? This action can't be undone!</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres borrar la fotografía '$${ photoTitle }'? ¡Ojó! Esta acción es irreversible.</p>`
 
 	} else {
 
-		action.title = 'Delete Photo'
-		cancel.title = 'Keep Photo'
+		action.title = 'Eliminar Fotografías'
+		cancel.title = 'Dejar Fotografías'
 
-		msg = lychee.html`<p>Are you sure you want to delete all $${ photoIDs.length } selected photo? This action can't be undone!</p>`
+		msg = lychee.html`<p>¿Estás seguro que quieres borrar las $${ photoIDs.length } fotografías seleccionadas? ¡Ojó! Esta acción es irreversible.</p>`
 
 	}
 
@@ -323,20 +323,20 @@ photo.setTitle = function(photoIDs) {
 
 	}
 
-	let input = lychee.html`<input class='text' name='title' type='text' maxlength='50' placeholder='Title' value='$${ oldTitle }'>`
+	let input = lychee.html`<input class='text' name='title' type='text' maxlength='50' placeholder='Título' value='$${ oldTitle }'>`
 
-	if (photoIDs.length===1) msg = lychee.html`<p>Enter a new title for this photo: ${ input }</p>`
-	else                     msg = lychee.html`<p>Enter a title for all $${ photoIDs.length } selected photos: ${ input }</p>`
+	if (photoIDs.length===1) msg = lychee.html`<p>Ingresa un nuevo título para esta fotografía: ${ input }</p>`
+	else                     msg = lychee.html`<p>Ingresa un nuevo título para las $${ photoIDs.length } fotografías seleccionadas: ${ input }</p>`
 
 	basicModal.show({
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Set title',
+				title: 'Guardar Título',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -497,14 +497,14 @@ photo.setDescription = function(photoID) {
 	}
 
 	basicModal.show({
-		body: lychee.html`<p>Enter a description for this photo: <input class='text' name='description' type='text' maxlength='800' placeholder='Description' value='$${ oldDescription }'></p>`,
+		body: lychee.html`<p>Ingresa una descripción para esta fotografía: <input class='text' name='description' type='text' maxlength='800' placeholder='Descripción' value='$${ oldDescription }'></p>`,
 		buttons: {
 			action: {
-				title: 'Set Description',
+				title: 'Guardar Descripción',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -543,20 +543,20 @@ photo.editTags = function(photoIDs) {
 
 	}
 
-	let input = lychee.html`<input class='text' name='tags' type='text' maxlength='800' placeholder='Tags' value='$${ oldTags }'>`
+	let input = lychee.html`<input class='text' name='tags' type='text' maxlength='800' placeholder='Etiqueta' value='$${ oldTags }'>`
 
-	if (photoIDs.length===1) msg = lychee.html`<p>Enter your tags for this photo. You can add multiple tags by separating them with a comma: ${ input }</p>`
-	else                     msg = lychee.html`<p>Enter your tags for all $${ photoIDs.length } selected photos. Existing tags will be overwritten. You can add multiple tags by separating them with a comma: ${ input }</p>`
+	if (photoIDs.length===1) msg = lychee.html`<p>Ingresa el nombre de la etiqueta para esta fotografía. Puedes agregar multiples etiquetas separándolas con comas: ${ input }</p>`
+	else                     msg = lychee.html`<p>Ingresa el nombre de la etiqueta para las $${ photoIDs.length } fotografías seleccionadas. Las etiquetas que ya existan serán sobreescritas. Puedes agregar multiples etiquetas separándolas con comas: ${ input }</p>`
 
 	basicModal.show({
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Set Tags',
+				title: 'Guardar',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}

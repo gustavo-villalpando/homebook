@@ -26,22 +26,21 @@ var _templateObject = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quiere
     _templateObject24 = _taggedTemplateLiteral(['<img class=\'cover\' width=\'16\' height=\'16\' src=\'$', '\'><div class=\'title\'>$', '</div>'], ['<img class=\'cover\' width=\'16\' height=\'16\' src=\'$', '\'><div class=\'title\'>$', '</div>']),
     _templateObject25 = _taggedTemplateLiteral(['$', '', ''], ['$', '', '']),
     _templateObject26 = _taggedTemplateLiteral(['\n\t          <p class=\'signIn\'>\n\t              <input class=\'text\' name=\'username\' autocomplete=\'username\' type=\'text\' placeholder=\'username\' autocapitalize=\'off\' autocorrect=\'off\'>\n\t              <input class=\'text\' name=\'password\' autocomplete=\'current-password\' type=\'password\' placeholder=\'password\'>\n\t          </p>\n\t          <p class=\'version\'>Lychee $', '<span> &#8211; <a target=\'_blank\' href=\'$', '\'>Update available!</a><span></p>\n\t          '], ['\n\t          <p class=\'signIn\'>\n\t              <input class=\'text\' name=\'username\' autocomplete=\'username\' type=\'text\' placeholder=\'username\' autocapitalize=\'off\' autocorrect=\'off\'>\n\t              <input class=\'text\' name=\'password\' autocomplete=\'current-password\' type=\'password\' placeholder=\'password\'>\n\t          </p>\n\t          <p class=\'version\'>Lychee $', '<span> &#8211; <a target=\'_blank\' href=\'$', '\'>Update available!</a><span></p>\n\t          ']),
-    _templateObject27 = _taggedTemplateLiteral(['<p>Are you sure you want to delete the photo \'$', '\'? This action can\'t be undone!</p>'], ['<p>Are you sure you want to delete the photo \'$', '\'? This action can\'t be undone!</p>']),
-    _templateObject28 = _taggedTemplateLiteral(['<p>Are you sure you want to delete all $', ' selected photo? This action can\'t be undone!</p>'], ['<p>Are you sure you want to delete all $', ' selected photo? This action can\'t be undone!</p>']),
-    _templateObject29 = _taggedTemplateLiteral(['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'Title\' value=\'$', '\'>'], ['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'Title\' value=\'$', '\'>']),
-    _templateObject30 = _taggedTemplateLiteral(['<p>Enter a new title for this photo: ', '</p>'], ['<p>Enter a new title for this photo: ', '</p>']),
-    _templateObject31 = _taggedTemplateLiteral(['<p>Enter a title for all $', ' selected photos: ', '</p>'], ['<p>Enter a title for all $', ' selected photos: ', '</p>']),
-    _templateObject32 = _taggedTemplateLiteral(['<p>Enter a description for this photo: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>'], ['<p>Enter a description for this photo: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>']),
-    _templateObject33 = _taggedTemplateLiteral(['<input class=\'text\' name=\'tags\' type=\'text\' maxlength=\'800\' placeholder=\'Tags\' value=\'$', '\'>'], ['<input class=\'text\' name=\'tags\' type=\'text\' maxlength=\'800\' placeholder=\'Tags\' value=\'$', '\'>']),
-    _templateObject34 = _taggedTemplateLiteral(['<p>Enter your tags for this photo. You can add multiple tags by separating them with a comma: ', '</p>'], ['<p>Enter your tags for this photo. You can add multiple tags by separating them with a comma: ', '</p>']),
-    _templateObject35 = _taggedTemplateLiteral(['<p>Enter your tags for all $', ' selected photos. Existing tags will be overwritten. You can add multiple tags by separating them with a comma: ', '</p>'], ['<p>Enter your tags for all $', ' selected photos. Existing tags will be overwritten. You can add multiple tags by separating them with a comma: ', '</p>']),
-    _templateObject36 = _taggedTemplateLiteral(['\n\t          <p>\n\t              In order to import photos from your Dropbox, you need a valid drop-ins app key from <a href=\'https://www.dropbox.com/developers/apps/create\'>their website</a>. Generate yourself a personal key and enter it below:\n\t              <input class=\'text\' name=\'key\' type=\'text\' placeholder=\'Dropbox API Key\' value=\'$', '\'>\n\t          </p>\n\t          '], ['\n\t          <p>\n\t              In order to import photos from your Dropbox, you need a valid drop-ins app key from <a href=\'https://www.dropbox.com/developers/apps/create\'>their website</a>. Generate yourself a personal key and enter it below:\n\t              <input class=\'text\' name=\'key\' type=\'text\' placeholder=\'Dropbox API Key\' value=\'$', '\'>\n\t          </p>\n\t          ']),
-    _templateObject37 = _taggedTemplateLiteral(['<span class=\'attr_$', '\'>$', '</span>'], ['<span class=\'attr_$', '\'>$', '</span>']),
-    _templateObject38 = _taggedTemplateLiteral(['\n\t\t\t         <tr>\n\t\t\t             <td>$', '</td>\n\t\t\t             <td>', '</td>\n\t\t\t         </tr>\n\t\t\t         '], ['\n\t\t\t         <tr>\n\t\t\t             <td>$', '</td>\n\t\t\t             <td>', '</td>\n\t\t\t         </tr>\n\t\t\t         ']),
-    _templateObject39 = _taggedTemplateLiteral(['\n\t\t         <div class=\'sidebar__divider\'>\n\t\t             <h1>$', '</h1>\n\t\t         </div>\n\t\t         <div id=\'tags\'>\n\t\t             <div class=\'attr_$', '\'>', '</div>\n\t\t             ', '\n\t\t         </div>\n\t\t         '], ['\n\t\t         <div class=\'sidebar__divider\'>\n\t\t             <h1>$', '</h1>\n\t\t         </div>\n\t\t         <div id=\'tags\'>\n\t\t             <div class=\'attr_$', '\'>', '</div>\n\t\t             ', '\n\t\t         </div>\n\t\t         ']),
-    _templateObject40 = _taggedTemplateLiteral(['<p>Please enter the direct link to a photo to import it: <input class=\'text\' name=\'link\' type=\'text\' placeholder=\'http://\' value=\'$', '\'></p>'], ['<p>Please enter the direct link to a photo to import it: <input class=\'text\' name=\'link\' type=\'text\' placeholder=\'http://\' value=\'$', '\'></p>']),
-    _templateObject41 = _taggedTemplateLiteral(['<p>This action will import all photos, folders and sub-folders which are located in the following directory. The <b>original files will be deleted</b> after the import when possible. <input class=\'text\' name=\'path\' type=\'text\' maxlength=\'100\' placeholder=\'Absolute path to directory\' value=\'$', 'uploads/import/\'></p>'], ['<p>This action will import all photos, folders and sub-folders which are located in the following directory. The <b>original files will be deleted</b> after the import when possible. <input class=\'text\' name=\'path\' type=\'text\' maxlength=\'100\' placeholder=\'Absolute path to directory\' value=\'$', 'uploads/import/\'></p>']),
-    _templateObject42 = _taggedTemplateLiteral(['linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("$', '")'], ['linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("$', '")']);
+    _templateObject27 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres borrar la fotograf\xEDa \'$', '\'? \xA1Oj\xF3! Esta acci\xF3n es irreversible.</p>'], ['<p>\xBFEst\xE1s seguro que quieres borrar la fotograf\xEDa \'$', '\'? \xA1Oj\xF3! Esta acci\xF3n es irreversible.</p>']),
+    _templateObject28 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres borrar las $', ' fotograf\xEDas seleccionadas? \xA1Oj\xF3! Esta acci\xF3n es irreversible.</p>'], ['<p>\xBFEst\xE1s seguro que quieres borrar las $', ' fotograf\xEDas seleccionadas? \xA1Oj\xF3! Esta acci\xF3n es irreversible.</p>']),
+    _templateObject29 = _taggedTemplateLiteral(['<p>Ingresa un nuevo t\xEDtulo para esta fotograf\xEDa: ', '</p>'], ['<p>Ingresa un nuevo t\xEDtulo para esta fotograf\xEDa: ', '</p>']),
+    _templateObject30 = _taggedTemplateLiteral(['<p>Ingresa un nuevo t\xEDtulo para las $', ' fotograf\xEDas seleccionadas: ', '</p>'], ['<p>Ingresa un nuevo t\xEDtulo para las $', ' fotograf\xEDas seleccionadas: ', '</p>']),
+    _templateObject31 = _taggedTemplateLiteral(['<p>Ingresa una descripci\xF3n para esta fotograf\xEDa: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Descripci\xF3n\' value=\'$', '\'></p>'], ['<p>Ingresa una descripci\xF3n para esta fotograf\xEDa: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Descripci\xF3n\' value=\'$', '\'></p>']),
+    _templateObject32 = _taggedTemplateLiteral(['<input class=\'text\' name=\'tags\' type=\'text\' maxlength=\'800\' placeholder=\'Etiqueta\' value=\'$', '\'>'], ['<input class=\'text\' name=\'tags\' type=\'text\' maxlength=\'800\' placeholder=\'Etiqueta\' value=\'$', '\'>']),
+    _templateObject33 = _taggedTemplateLiteral(['<p>Ingresa el nombre de la etiqueta para esta fotograf\xEDa. Puedes agregar multiples etiquetas separ\xE1ndolas con comas: ', '</p>'], ['<p>Ingresa el nombre de la etiqueta para esta fotograf\xEDa. Puedes agregar multiples etiquetas separ\xE1ndolas con comas: ', '</p>']),
+    _templateObject34 = _taggedTemplateLiteral(['<p>Ingresa el nombre de la etiqueta para las $', ' fotograf\xEDas seleccionadas. Las etiquetas que ya existan ser\xE1n sobreescritas. Puedes agregar multiples etiquetas separ\xE1ndolas con comas: ', '</p>'], ['<p>Ingresa el nombre de la etiqueta para las $', ' fotograf\xEDas seleccionadas. Las etiquetas que ya existan ser\xE1n sobreescritas. Puedes agregar multiples etiquetas separ\xE1ndolas con comas: ', '</p>']),
+    _templateObject35 = _taggedTemplateLiteral(['\n\t          <p>\n\t              In order to import photos from your Dropbox, you need a valid drop-ins app key from <a href=\'https://www.dropbox.com/developers/apps/create\'>their website</a>. Generate yourself a personal key and enter it below:\n\t              <input class=\'text\' name=\'key\' type=\'text\' placeholder=\'Dropbox API Key\' value=\'$', '\'>\n\t          </p>\n\t          '], ['\n\t          <p>\n\t              In order to import photos from your Dropbox, you need a valid drop-ins app key from <a href=\'https://www.dropbox.com/developers/apps/create\'>their website</a>. Generate yourself a personal key and enter it below:\n\t              <input class=\'text\' name=\'key\' type=\'text\' placeholder=\'Dropbox API Key\' value=\'$', '\'>\n\t          </p>\n\t          ']),
+    _templateObject36 = _taggedTemplateLiteral(['<span class=\'attr_$', '\'>$', '</span>'], ['<span class=\'attr_$', '\'>$', '</span>']),
+    _templateObject37 = _taggedTemplateLiteral(['\n\t\t\t         <tr>\n\t\t\t             <td>$', '</td>\n\t\t\t             <td>', '</td>\n\t\t\t         </tr>\n\t\t\t         '], ['\n\t\t\t         <tr>\n\t\t\t             <td>$', '</td>\n\t\t\t             <td>', '</td>\n\t\t\t         </tr>\n\t\t\t         ']),
+    _templateObject38 = _taggedTemplateLiteral(['\n\t\t         <div class=\'sidebar__divider\'>\n\t\t             <h1>$', '</h1>\n\t\t         </div>\n\t\t         <div id=\'tags\'>\n\t\t             <div class=\'attr_$', '\'>', '</div>\n\t\t             ', '\n\t\t         </div>\n\t\t         '], ['\n\t\t         <div class=\'sidebar__divider\'>\n\t\t             <h1>$', '</h1>\n\t\t         </div>\n\t\t         <div id=\'tags\'>\n\t\t             <div class=\'attr_$', '\'>', '</div>\n\t\t             ', '\n\t\t         </div>\n\t\t         ']),
+    _templateObject39 = _taggedTemplateLiteral(['<p>Please enter the direct link to a photo to import it: <input class=\'text\' name=\'link\' type=\'text\' placeholder=\'http://\' value=\'$', '\'></p>'], ['<p>Please enter the direct link to a photo to import it: <input class=\'text\' name=\'link\' type=\'text\' placeholder=\'http://\' value=\'$', '\'></p>']),
+    _templateObject40 = _taggedTemplateLiteral(['<p>This action will import all photos, folders and sub-folders which are located in the following directory. The <b>original files will be deleted</b> after the import when possible. <input class=\'text\' name=\'path\' type=\'text\' maxlength=\'100\' placeholder=\'Absolute path to directory\' value=\'$', 'uploads/import/\'></p>'], ['<p>This action will import all photos, folders and sub-folders which are located in the following directory. The <b>original files will be deleted</b> after the import when possible. <input class=\'text\' name=\'path\' type=\'text\' maxlength=\'100\' placeholder=\'Absolute path to directory\' value=\'$', 'uploads/import/\'></p>']),
+    _templateObject41 = _taggedTemplateLiteral(['linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("$', '")'], ['linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url("$', '")']);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -1061,7 +1060,7 @@ contextMenu.mergeAlbum = function (albumID, e) {
 				var _this2 = this;
 
 				if (!this.thumbs[0]) this.thumbs[0] = 'src/images/no_cover.svg';
-				if (this.title === '') this.title = 'Untitled';
+				if (this.title === '') this.title = 'Sin título';
 
 				var html = lychee.html(_templateObject24, this.thumbs[0], this.title);
 
@@ -1113,17 +1112,17 @@ contextMenu.photoMulti = function (photoIDs, e) {
 
 	multiselect.stopResize();
 
-	var items = [{ title: build.iconic('star') + 'Star All', fn: function fn() {
+	var items = [{ title: build.iconic('star') + 'Favoritas', fn: function fn() {
 			return photo.setStar(photoIDs);
-		} }, { title: build.iconic('tag') + 'Tag All', fn: function fn() {
+		} }, { title: build.iconic('tag') + 'Etiquetar todas', fn: function fn() {
 			return photo.editTags(photoIDs);
-		} }, {}, { title: build.iconic('pencil') + 'Rename All', fn: function fn() {
+		} }, {}, { title: build.iconic('pencil') + 'Renombrar todas', fn: function fn() {
 			return photo.setTitle(photoIDs);
-		} }, { title: build.iconic('layers') + 'Duplicate All', fn: function fn() {
+		} }, { title: build.iconic('layers') + 'Duplicar todas', fn: function fn() {
 			return photo.duplicate(photoIDs);
-		} }, { title: build.iconic('folder') + 'Move All', fn: function fn() {
+		} }, { title: build.iconic('folder') + 'Mover todas', fn: function fn() {
 			basicContext.close();contextMenu.move(photoIDs, e);
-		} }, { title: build.iconic('trash') + 'Delete All', fn: function fn() {
+		} }, { title: build.iconic('trash') + 'Borrar todas', fn: function fn() {
 			return photo.delete(photoIDs);
 		} }];
 
@@ -1132,7 +1131,7 @@ contextMenu.photoMulti = function (photoIDs, e) {
 
 contextMenu.photoTitle = function (albumID, photoID, e) {
 
-	var items = [{ title: build.iconic('pencil') + 'Rename', fn: function fn() {
+	var items = [{ title: build.iconic('pencil') + 'Renombrar', fn: function fn() {
 			return photo.setTitle([photoID]);
 		} }];
 
@@ -1146,7 +1145,7 @@ contextMenu.photoTitle = function (albumID, photoID, e) {
 		$.each(data.content, function (index) {
 			var _this3 = this;
 
-			if (this.title === '') this.title = 'Untitled';
+			if (this.title === '') this.title = 'Sin título';
 
 			var html = lychee.html(_templateObject24, this.thumbUrl, this.title);
 
@@ -1169,9 +1168,9 @@ contextMenu.photoMore = function (photoID, e) {
 	// b) Downloadable is 1 and public mode is on
 	var showDownload = lychee.publicMode === false || album.json && album.json.downloadable && album.json.downloadable === '1' && lychee.publicMode === true;
 
-	var items = [{ title: build.iconic('fullscreen-enter') + 'Full Photo', fn: function fn() {
+	var items = [{ title: build.iconic('fullscreen-enter') + 'Ver en navegador', fn: function fn() {
 			return window.open(photo.getDirectLink());
-		} }, { title: build.iconic('cloud-download') + 'Download', visible: showDownload, fn: function fn() {
+		} }, { title: build.iconic('cloud-download') + 'Descargar', visible: showDownload, fn: function fn() {
 			return photo.getArchive(photoID);
 		} }];
 
@@ -1187,7 +1186,7 @@ contextMenu.move = function (photoIDs, e) {
 		if (data.num === 0) {
 
 			// Show only 'Add album' when no album available
-			items = [{ title: 'New Album', fn: album.add }];
+			items = [{ title: 'Nuevo Álbum', fn: album.add }];
 		} else {
 
 			// Generate list of albums
@@ -1195,7 +1194,7 @@ contextMenu.move = function (photoIDs, e) {
 				var _this4 = this;
 
 				if (!this.thumbs[0]) this.thumbs[0] = 'src/images/no_cover.svg';
-				if (this.title === '') this.title = 'Untitled';
+				if (this.title === '') this.title = 'Sin título';
 
 				var html = lychee.html(_templateObject24, this.thumbs[0], this.title);
 
@@ -2517,7 +2516,7 @@ photo.delete = function (photoIDs) {
 		if (visible.photo()) photoTitle = photo.json.title;else photoTitle = album.json.content[photoIDs].title;
 
 		// Fallback for photos without a title
-		if (photoTitle === '') photoTitle = 'Untitled';
+		if (photoTitle === '') photoTitle = 'Sin título';
 	}
 
 	action.fn = function () {
@@ -2561,14 +2560,14 @@ photo.delete = function (photoIDs) {
 
 	if (photoIDs.length === 1) {
 
-		action.title = 'Delete Photo';
-		cancel.title = 'Keep Photo';
+		action.title = 'Eliminar Fotografía';
+		cancel.title = 'Dejar Fotografía';
 
 		msg = lychee.html(_templateObject27, photoTitle);
 	} else {
 
-		action.title = 'Delete Photo';
-		cancel.title = 'Keep Photo';
+		action.title = 'Eliminar Fotografías';
+		cancel.title = 'Dejar Fotografías';
 
 		msg = lychee.html(_templateObject28, photoIDs.length);
 	}
@@ -2630,19 +2629,19 @@ photo.setTitle = function (photoIDs) {
 		});
 	};
 
-	var input = lychee.html(_templateObject29, oldTitle);
+	var input = lychee.html(_templateObject3, oldTitle);
 
-	if (photoIDs.length === 1) msg = lychee.html(_templateObject30, input);else msg = lychee.html(_templateObject31, photoIDs.length, input);
+	if (photoIDs.length === 1) msg = lychee.html(_templateObject29, input);else msg = lychee.html(_templateObject30, photoIDs.length, input);
 
 	basicModal.show({
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Set title',
+				title: 'Guardar Título',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -2788,14 +2787,14 @@ photo.setDescription = function (photoID) {
 	};
 
 	basicModal.show({
-		body: lychee.html(_templateObject32, oldDescription),
+		body: lychee.html(_templateObject31, oldDescription),
 		buttons: {
 			action: {
-				title: 'Set Description',
+				title: 'Guardar Descripción',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -2830,19 +2829,19 @@ photo.editTags = function (photoIDs) {
 		photo.setTags(photoIDs, data.tags);
 	};
 
-	var input = lychee.html(_templateObject33, oldTags);
+	var input = lychee.html(_templateObject32, oldTags);
 
-	if (photoIDs.length === 1) msg = lychee.html(_templateObject34, input);else msg = lychee.html(_templateObject35, photoIDs.length, input);
+	if (photoIDs.length === 1) msg = lychee.html(_templateObject33, input);else msg = lychee.html(_templateObject34, photoIDs.length, input);
 
 	basicModal.show({
 		body: msg,
 		buttons: {
 			action: {
-				title: 'Set Tags',
+				title: 'Guardar',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -3343,7 +3342,7 @@ settings.setDropboxKey = function (callback) {
 		});
 	};
 
-	var msg = lychee.html(_templateObject36, lychee.dropboxKey);
+	var msg = lychee.html(_templateObject35, lychee.dropboxKey);
 
 	basicModal.show({
 		body: msg,
@@ -3653,12 +3652,12 @@ sidebar.render = function (structure) {
 			if (value === '' || value == null) value = '-';
 
 			// Wrap span-element around value for easier selecting on change
-			value = lychee.html(_templateObject37, row.title.toLowerCase(), value);
+			value = lychee.html(_templateObject36, row.title.toLowerCase(), value);
 
 			// Add edit-icon to the value when editable
 			if (row.editable === true) value += ' ' + build.editIcon('edit_' + row.title.toLowerCase());
 
-			_html += lychee.html(_templateObject38, row.title, value);
+			_html += lychee.html(_templateObject37, row.title, value);
 		});
 
 		_html += '\n\t\t         </table>\n\t\t         ';
@@ -3674,7 +3673,7 @@ sidebar.render = function (structure) {
 		// Add edit-icon to the value when editable
 		if (section.editable === true) editable = build.editIcon('edit_tags');
 
-		_html += lychee.html(_templateObject39, section.title, section.title.toLowerCase(), section.value, editable);
+		_html += lychee.html(_templateObject38, section.title, section.title.toLowerCase(), section.value, editable);
 
 		return _html;
 	};
@@ -4017,7 +4016,7 @@ upload.start = {
 		};
 
 		basicModal.show({
-			body: lychee.html(_templateObject40, _url),
+			body: lychee.html(_templateObject39, _url),
 			buttons: {
 				action: {
 					title: 'Import',
@@ -4104,7 +4103,7 @@ upload.start = {
 		};
 
 		basicModal.show({
-			body: lychee.html(_templateObject41, lychee.location),
+			body: lychee.html(_templateObject40, lychee.location),
 			buttons: {
 				action: {
 					title: 'Import',
@@ -4581,7 +4580,7 @@ view.photo = {
 			var nextPhotoID = album.json.content[photoID].nextPhoto;
 			var nextPhoto = album.json.content[nextPhotoID];
 
-			$nextArrow.css('background-image', lychee.html(_templateObject42, nextPhoto.thumbUrl));
+			$nextArrow.css('background-image', lychee.html(_templateObject41, nextPhoto.thumbUrl));
 		}
 
 		if (hasPrevious === false || lychee.viewMode === true) {
@@ -4592,7 +4591,7 @@ view.photo = {
 			var previousPhotoID = album.json.content[photoID].previousPhoto;
 			var previousPhoto = album.json.content[previousPhotoID];
 
-			$previousArrow.css('background-image', lychee.html(_templateObject42, previousPhoto.thumbUrl));
+			$previousArrow.css('background-image', lychee.html(_templateObject41, previousPhoto.thumbUrl));
 		}
 	}),
 
