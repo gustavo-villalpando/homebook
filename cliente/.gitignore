@@ -13,6 +13,7 @@ uploads/thumb/*
 !uploads/medium/index.html
 !uploads/thumb/index.html
 
+src/npm-debug.log
 src/npm-debug.log.*
 
 !plugins/Diagnostics/

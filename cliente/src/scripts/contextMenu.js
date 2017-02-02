@@ -7,13 +7,13 @@ contextMenu = {}
 contextMenu.add = function(e) {
 
 	let items = [
-		{ title: build.iconic('image') + 'Upload Photo', fn: () => $('#upload_files').click() },
+		{ title: build.iconic('image') + 'Subir Fotografía', fn: () => $('#upload_files').click() },
 		{ },
 		{ title: build.iconic('link-intact') + 'Import from Link', fn: upload.start.url },
 		{ title: build.iconic('dropbox', 'ionicons') + 'Import from Dropbox', fn: upload.start.dropbox },
 		{ title: build.iconic('terminal') + 'Import from Server', fn: upload.start.server },
 		{ },
-		{ title: build.iconic('folder') + 'New Album', fn: album.add }
+		{ title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }
 	]
 
 	basicContext.show(items, e.originalEvent)
@@ -114,7 +114,7 @@ contextMenu.albumTitle = function(albumID, e) {
 
 		}
 
-		items.unshift({ title: build.iconic('pencil') + 'Rename', fn: () => album.setTitle([ albumID ]) })
+		items.unshift({ title: build.iconic('pencil') + 'Renombrar', fn: () => album.setTitle([ albumID ]) })
 
 		basicContext.show(items, e.originalEvent, contextMenu.close)
 
