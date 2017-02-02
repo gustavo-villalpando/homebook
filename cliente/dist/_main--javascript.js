@@ -5,7 +5,7 @@ var _templateObject = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quiere
     _templateObject3 = _taggedTemplateLiteral(['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'$', '\'>'], ['<input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'$', '\'>']),
     _templateObject4 = _taggedTemplateLiteral(['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>'], ['<p>Ingresa el nuevo t\xEDtulo para este \xE1lbum: ', '</p>']),
     _templateObject5 = _taggedTemplateLiteral(['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>'], ['<p>Ingresa el t\xEDtulo para los $', ' \xE1lbumes seleccionados: ', '</p>']),
-    _templateObject6 = _taggedTemplateLiteral(['<p>Please enter a description for this album: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>'], ['<p>Please enter a description for this album: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Description\' value=\'$', '\'></p>']),
+    _templateObject6 = _taggedTemplateLiteral(['<p>Ingresa una descripci\xF3n para este \xE1lbum: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Descripci\xF3n\' value=\'$', '\'></p>'], ['<p>Ingresa una descripci\xF3n para este \xE1lbum: <input class=\'text\' name=\'description\' type=\'text\' maxlength=\'800\' placeholder=\'Descripci\xF3n\' value=\'$', '\'></p>']),
     _templateObject7 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres mezclar el \xE1lbum \'$', '\' con el \xE1lbum \'$', '\'?</p>'], ['<p>\xBFEst\xE1s seguro que quieres mezclar el \xE1lbum \'$', '\' con el \xE1lbum \'$', '\'?</p>']),
     _templateObject8 = _taggedTemplateLiteral(['<p>\xBFEst\xE1s seguro que quieres mezclar todos los \xE1lbumes seleccionados con el \xE1lbum  \'$', '\'?</p>'], ['<p>\xBFEst\xE1s seguro que quieres mezclar todos los \xE1lbumes seleccionados con el \xE1lbum  \'$', '\'?</p>']),
     _templateObject9 = _taggedTemplateLiteral(['<svg class=\'iconic $', '\'><use xlink:href=\'#$', '\' /></svg>'], ['<svg class=\'iconic $', '\'><use xlink:href=\'#$', '\' /></svg>']),
@@ -170,7 +170,7 @@ album.add = function () {
 		body: '<p>Ingresa el t\xEDtulo para el nuevo album: <input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'T\xEDtulo\'></p>',
 		buttons: {
 			action: {
-				title: 'Crear Album',
+				title: 'Crear Álbum',
 				fn: action
 			},
 			cancel: {
@@ -359,11 +359,11 @@ album.setDescription = function (albumID) {
 		body: lychee.html(_templateObject6, oldDescription),
 		buttons: {
 			action: {
-				title: 'Set Description',
+				title: 'Guardar Descripción',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}
@@ -3610,21 +3610,21 @@ sidebar.createStructure.album = function (data) {
 	}
 
 	structure.basics = {
-		title: 'Basics',
+		title: 'Básico',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Title', value: data.title, editable: editable }, { title: 'Description', value: data.description, editable: editable }]
+		rows: [{ title: 'Título', value: data.title, editable: editable }, { title: 'Descripción', value: data.description, editable: editable }]
 	};
 
 	structure.album = {
-		title: 'Album',
+		title: 'Álbum',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Created', value: data.sysdate }, { title: 'Images', value: data.num }]
+		rows: [{ title: 'Fecha creación', value: data.sysdate }, { title: 'Fótografias', value: data.num }]
 	};
 
 	structure.share = {
-		title: 'Share',
+		title: 'Compartir',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Public', value: _public }, { title: 'Hidden', value: hidden }, { title: 'Downloadable', value: downloadable }, { title: 'Password', value: password }]
+		rows: [{ title: 'Publicó', value: _public }, { title: 'Oculto', value: hidden }, { title: 'Descargable', value: downloadable }, { title: 'Contraseña', value: password }]
 	};
 
 	// Construct all parts of the structure

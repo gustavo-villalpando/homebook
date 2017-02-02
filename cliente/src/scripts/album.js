@@ -130,7 +130,7 @@ album.add = function() {
 		body: `<p>Ingresa el título para el nuevo album: <input class='text' name='title' type='text' maxlength='50' placeholder='Título' value='Título'></p>`,
 		buttons: {
 			action: {
-				title: 'Crear Album',
+				title: 'Crear Álbum',
 				fn: action
 			},
 			cancel: {
@@ -336,14 +336,14 @@ album.setDescription = function(albumID) {
 	}
 
 	basicModal.show({
-		body: lychee.html`<p>Please enter a description for this album: <input class='text' name='description' type='text' maxlength='800' placeholder='Description' value='$${ oldDescription }'></p>`,
+		body: lychee.html`<p>Ingresa una descripción para este álbum: <input class='text' name='description' type='text' maxlength='800' placeholder='Descripción' value='$${ oldDescription }'></p>`,
 		buttons: {
 			action: {
-				title: 'Set Description',
+				title: 'Guardar Descripción',
 				fn: action
 			},
 			cancel: {
-				title: 'Cancel',
+				title: 'Cancelar',
 				fn: basicModal.close
 			}
 		}

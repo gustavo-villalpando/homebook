@@ -55,6 +55,7 @@ if (!empty($fn)) {
 	// Start the session and set the default timezone
 	session_start();
 	date_default_timezone_set('UTC');
+	setlocale(LC_ALL,"es_ES");
 
 	// Validate parameters
 	if (isset($_POST['albumIDs'])&&Validator::isAlbumIDs($_POST['albumIDs'])===false) Response::error('Wrong parameter type for albumIDs!');

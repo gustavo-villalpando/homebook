@@ -278,31 +278,31 @@ sidebar.createStructure.album = function(data) {
 	}
 
 	structure.basics = {
-		title : 'Basics',
+		title : 'Básico',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Title',       value: data.title,       editable },
-			{ title: 'Description', value: data.description, editable }
+			{ title: 'Título',       value: data.title,       editable },
+			{ title: 'Descripción', value: data.description, editable }
 		]
 	}
 
 	structure.album = {
-		title : 'Album',
+		title : 'Álbum',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Created', value: data.sysdate },
-			{ title: 'Images',  value: data.num }
+			{ title: 'Fecha creación', value: data.sysdate },
+			{ title: 'Fótografias',  value: data.num }
 		]
 	}
 
 	structure.share = {
-		title : 'Share',
+		title : 'Compartir',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Public',       value: _public },
-			{ title: 'Hidden',       value: hidden },
-			{ title: 'Downloadable', value: downloadable },
-			{ title: 'Password',     value: password }
+			{ title: 'Publicó',       value: _public },
+			{ title: 'Oculto',       value: hidden },
+			{ title: 'Descargable', value: downloadable },
+			{ title: 'Contraseña',     value: password }
 		]
 	}
 

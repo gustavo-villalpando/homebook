@@ -77,6 +77,7 @@ final class Album {
 
 		// Parse date
 		$album['sysdate'] = strftime('%B %Y', $data['sysstamp']);
+		$album['sysdate'] = ucfirst($album['sysdate']);
 
 		// Parse password
 		$album['password'] = ($data['password']=='' ? '0' : '1');

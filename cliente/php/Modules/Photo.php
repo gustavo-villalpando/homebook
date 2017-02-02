@@ -680,6 +680,8 @@ final class Photo {
 
 		}
 
+		$photo['sysdate'] = ucwords($photo['sysdate']);
+
 		return $photo;
 
 	}
