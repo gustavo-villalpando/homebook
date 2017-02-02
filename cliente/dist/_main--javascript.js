@@ -3618,7 +3618,7 @@ sidebar.createStructure.album = function (data) {
 	structure.album = {
 		title: 'Álbum',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Fecha creación', value: data.sysdate }, { title: 'Fótografias', value: data.num }]
+		rows: [{ title: 'Creado en', value: data.sysdate }, { title: 'Fótografias', value: data.num }]
 	};
 
 	structure.share = {

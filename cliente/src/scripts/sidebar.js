@@ -290,7 +290,7 @@ sidebar.createStructure.album = function(data) {
 		title : 'Álbum',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Fecha creación', value: data.sysdate },
+			{ title: 'Creado en', value: data.sysdate },
 			{ title: 'Fótografias',  value: data.num }
 		]
 	}
