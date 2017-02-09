@@ -157,9 +157,11 @@ album.add = function () {
 		api.post('Album::add', params, function (data) {
 
 			if (data !== false && isNumber(data)) {
+				console.log('entro if');
 				albums.refresh();
 				lychee.goto(data);
 			} else {
+				console.log('entro else');
 				lychee.error(null, params, data);
 			}
 		});
@@ -1183,7 +1185,7 @@ contextMenu.move = function (photoIDs, e) {
 
 	api.post('Albums::get', {}, function (data) {
 
-		if (data.num === 0) {
+		if (data.num === 0 || data.num === 1) {
 
 			// Show only 'Add album' when no album available
 			items = [{ title: 'Nuevo Álbum', fn: album.add }];
@@ -1206,14 +1208,12 @@ contextMenu.move = function (photoIDs, e) {
 				});
 			});
 
+			// Se quito la posibilidad de mover las fotos al album "Unsorted"
 			// Show Unsorted when unsorted is not the current album
-			if (album.getID() !== '0') {
-
-				items.unshift({});
-				items.unshift({ title: 'Unsorted', fn: function fn() {
-						return photo.setAlbum(photoIDs, 0);
-					} });
-			}
+			/*if (album.getID()!=='0') {
+   			items.unshift({ })
+   	items.unshift({ title: 'Unsorted', fn: () => photo.setAlbum(photoIDs, 0) })
+   		}*/
 		}
 
 		basicContext.show(items, e.originalEvent, contextMenu.close);
@@ -3484,22 +3484,22 @@ sidebar.createStructure.photo = function (data) {
 	}
 
 	structure.basics = {
-		title: 'Basics',
+		title: 'Básico',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Title', value: data.title, editable: editable }, { title: 'Uploaded', value: data.sysdate }, { title: 'Description', value: data.description, editable: editable }]
+		rows: [{ title: 'Título', value: data.title, editable: editable }, { title: 'Cargada el', value: data.sysdate }, { title: 'Descripción', value: data.description, editable: editable }]
 	};
 
 	structure.image = {
-		title: 'Image',
+		title: 'Imagen',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Size', value: data.size }, { title: 'Format', value: data.type }, { title: 'Resolution', value: data.width + ' x ' + data.height }]
+		rows: [{ title: 'Tamaño', value: data.size }, { title: 'Formato', value: data.type }, { title: 'Resolución', value: data.width + ' x ' + data.height }]
 	};
 
 	// Only create tags section when user logged in
 	if (lychee.publicMode === false) {
 
 		structure.tags = {
-			title: 'Tags',
+			title: 'Etiquetas',
 			type: sidebar.types.TAGS,
 			value: build.tags(data.tags),
 			editable: editable
@@ -3515,7 +3515,7 @@ sidebar.createStructure.photo = function (data) {
 		structure.exif = {
 			title: 'Camera',
 			type: sidebar.types.DEFAULT,
-			rows: [{ title: 'Captured', value: data.takedate }, { title: 'Make', value: data.make }, { title: 'Type/Model', value: data.model }, { title: 'Shutter Speed', value: data.shutter }, { title: 'Aperture', value: data.aperture }, { title: 'Focal Length', value: data.focal }, { title: 'ISO', value: data.iso }]
+			rows: [{ title: 'Capturada', value: data.takedate }, { title: 'Make', value: data.make }, { title: 'Tipo/Modelo', value: data.model }, { title: 'Velocidad Obturación', value: data.shutter }, { title: 'Abertura', value: data.aperture }, { title: 'Distancia Focal', value: data.focal }, { title: 'ISO', value: data.iso }]
 		};
 	} else {
 
@@ -3523,9 +3523,9 @@ sidebar.createStructure.photo = function (data) {
 	}
 
 	structure.sharing = {
-		title: 'Sharing',
+		title: 'Compartir',
 		type: sidebar.types.DEFAULT,
-		rows: [{ title: 'Public', value: _public }]
+		rows: [{ title: 'Pública', value: _public }]
 	};
 
 	// Construct all parts of the structure
@@ -3555,7 +3555,7 @@ sidebar.createStructure.album = function (data) {
 			_public = 'No';
 			break;
 		case '1':
-			_public = 'Yes';
+			_public = 'Sí';
 			break;
 		default:
 			_public = '-';
@@ -3567,7 +3567,7 @@ sidebar.createStructure.album = function (data) {
 	switch (data.visible) {
 
 		case '0':
-			hidden = 'Yes';
+			hidden = 'Sí';
 			break;
 		case '1':
 			hidden = 'No';
@@ -3585,7 +3585,7 @@ sidebar.createStructure.album = function (data) {
 			downloadable = 'No';
 			break;
 		case '1':
-			downloadable = 'Yes';
+			downloadable = 'Sí';
 			break;
 		default:
 			downloadable = '-';
@@ -3600,7 +3600,7 @@ sidebar.createStructure.album = function (data) {
 			password = 'No';
 			break;
 		case '1':
-			password = 'Yes';
+			password = 'Sí';
 			break;
 		default:
 			password = '-';
@@ -4520,12 +4520,12 @@ view.photo = {
 		if (photo.json.star === '1') {
 
 			// Starred
-			$('#button_star').addClass('active').attr('title', 'Unstar Photo');
+			$('#button_star').addClass('active').attr('title', 'Quitar de Favoritas');
 		} else {
 
 			// Unstarred
 			$('#button_star').removeClass('active');
-			$('#button_star').attr('title', 'Star Photo');
+			$('#button_star').attr('title', 'Favorita');
 		}
 	},
 
@@ -4534,13 +4534,13 @@ view.photo = {
 		if (photo.json.public === '1' || photo.json.public === '2') {
 
 			// Photo public
-			$('#button_share').addClass('active').attr('title', 'Share Photo');
+			$('#button_share').addClass('active').attr('title', 'Compartir Fotografía');
 
 			if (photo.json.init) sidebar.changeAttr('public', 'Yes');
 		} else {
 
 			// Photo private
-			$('#button_share').removeClass('active').attr('title', 'Make Public');
+			$('#button_share').removeClass('active').attr('title', 'Hacer Pública');
 
 			if (photo.json.init) sidebar.changeAttr('public', 'No');
 		}

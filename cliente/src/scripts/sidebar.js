@@ -136,22 +136,22 @@ sidebar.createStructure.photo = function(data) {
 	}
 
 	structure.basics = {
-		title : 'Basics',
+		title : 'Básico',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Title',       value: data.title, editable },
-			{ title: 'Uploaded',    value: data.sysdate },
-			{ title: 'Description', value: data.description, editable }
+			{ title: 'Título',       value: data.title, editable },
+			{ title: 'Cargada el',    value: data.sysdate },
+			{ title: 'Descripción', value: data.description, editable }
 		]
 	}
 
 	structure.image = {
-		title : 'Image',
+		title : 'Imagen',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Size',       value: data.size },
-			{ title: 'Format',     value: data.type },
-			{ title: 'Resolution', value: data.width + ' x ' + data.height }
+			{ title: 'Tamaño',       value: data.size },
+			{ title: 'Formato',     value: data.type },
+			{ title: 'Resolución', value: data.width + ' x ' + data.height }
 		]
 	}
 
@@ -159,7 +159,7 @@ sidebar.createStructure.photo = function(data) {
 	if (lychee.publicMode===false) {
 
 		structure.tags = {
-			title : 'Tags',
+			title : 'Etiquetas',
 			type  : sidebar.types.TAGS,
 			value : build.tags(data.tags),
 			editable
@@ -178,12 +178,12 @@ sidebar.createStructure.photo = function(data) {
 			title : 'Camera',
 			type  : sidebar.types.DEFAULT,
 			rows  : [
-				{ title: 'Captured',      value: data.takedate },
+				{ title: 'Capturada',      value: data.takedate },
 				{ title: 'Make',          value: data.make },
-				{ title: 'Type/Model',    value: data.model },
-				{ title: 'Shutter Speed', value: data.shutter },
-				{ title: 'Aperture',      value: data.aperture },
-				{ title: 'Focal Length',  value: data.focal },
+				{ title: 'Tipo/Modelo',    value: data.model },
+				{ title: 'Velocidad Obturación', value: data.shutter },
+				{ title: 'Abertura',      value: data.aperture },
+				{ title: 'Distancia Focal',  value: data.focal },
 				{ title: 'ISO',           value: data.iso }
 			]
 		}
@@ -195,10 +195,10 @@ sidebar.createStructure.photo = function(data) {
 	}
 
 	structure.sharing = {
-		title : 'Sharing',
+		title : 'Compartir',
 		type  : sidebar.types.DEFAULT,
 		rows  : [
-			{ title: 'Public', value: _public }
+			{ title: 'Pública', value: _public }
 		]
 	}
 
@@ -234,7 +234,7 @@ sidebar.createStructure.album = function(data) {
 
 		case '0' : _public = 'No'
 		           break
-		case '1' : _public = 'Yes'
+		case '1' : _public = 'Sí'
 		           break
 		default  : _public = '-'
 		           break
@@ -244,7 +244,7 @@ sidebar.createStructure.album = function(data) {
 	// Set value for hidden
 	switch (data.visible) {
 
-		case '0' : hidden = 'Yes'
+		case '0' : hidden = 'Sí'
 		           break
 		case '1' : hidden = 'No'
 		           break
@@ -258,7 +258,7 @@ sidebar.createStructure.album = function(data) {
 
 		case '0' : downloadable = 'No'
 		           break
-		case '1' : downloadable = 'Yes'
+		case '1' : downloadable = 'Sí'
 		           break
 		default  : downloadable = '-'
 		           break
@@ -270,7 +270,7 @@ sidebar.createStructure.album = function(data) {
 
 		case '0' : password = 'No'
 		           break
-		case '1' : password = 'Yes'
+		case '1' : password = 'Sí'
 		           break
 		default  : password = '-'
 		           break

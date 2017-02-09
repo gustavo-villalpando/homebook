@@ -366,13 +366,13 @@ view.photo = {
 			// Starred
 			$('#button_star')
 				.addClass('active')
-				.attr('title', 'Unstar Photo')
+				.attr('title', 'Quitar de Favoritas')
 
 		} else {
 
 			// Unstarred
 			$('#button_star').removeClass('active')
-			$('#button_star').attr('title', 'Star Photo')
+			$('#button_star').attr('title', 'Favorita')
 
 		}
 
@@ -385,7 +385,7 @@ view.photo = {
 			// Photo public
 			$('#button_share')
 				.addClass('active')
-				.attr('title', 'Share Photo')
+				.attr('title', 'Compartir Fotografía')
 
 			if (photo.json.init) sidebar.changeAttr('public', 'Yes')
 
@@ -394,7 +394,7 @@ view.photo = {
 			// Photo private
 			$('#button_share')
 				.removeClass('active')
-				.attr('title', 'Make Public')
+				.attr('title', 'Hacer Pública')
 
 			if (photo.json.init) sidebar.changeAttr('public', 'No')
 

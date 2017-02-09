@@ -252,7 +252,7 @@ contextMenu.move = function(photoIDs, e) {
 
 	api.post('Albums::get', {}, function(data) {
 
-		if (data.num===0) {
+		if (data.num===0 || data.num===1) {
 
 			// Show only 'Add album' when no album available
 			items = [
@@ -276,13 +276,14 @@ contextMenu.move = function(photoIDs, e) {
 
 			})
 
+			// Se quito la posibilidad de mover las fotos al album "Unsorted"
 			// Show Unsorted when unsorted is not the current album
-			if (album.getID()!=='0') {
+			/*if (album.getID()!=='0') {
 
 				items.unshift({ })
 				items.unshift({ title: 'Unsorted', fn: () => photo.setAlbum(photoIDs, 0) })
 
-			}
+			}*/
 
 		}
 

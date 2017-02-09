@@ -116,9 +116,11 @@ album.add = function() {
 		api.post('Album::add', params, function(data) {
 
 			if (data!==false && isNumber(data)) {
+				console.log('entro if');
 				albums.refresh()
 				lychee.goto(data)
 			} else {
+				console.log('entro else');
 				lychee.error(null, params, data)
 			}
 
