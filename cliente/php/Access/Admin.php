@@ -28,6 +28,7 @@ final class Admin extends Access {
 			case 'Album::setPublic':        self::setAlbumPublicAction(); break;
 			case 'Album::delete':           self::deleteAlbumAction(); break;
 			case 'Album::merge':            self::mergeAlbumsAction(); break;
+			case 'Album::addSetPhoto':    	self::addSetPhotoAlbumAction(); break; // @autor Homebook
 
 			// Photo functions
 			case 'Photo::get':              self::getPhotoAction(); break;
@@ -94,6 +95,19 @@ final class Admin extends Access {
 
 		$album = new Album(null);
 		Response::json($album->add($_POST['title']), JSON_NUMERIC_CHECK);
+
+	}
+
+	/**
+	 * @autor Homebook
+	 * Funcion creada para cuando se mueven fotos a un album nuevo
+	 */
+	private static function addSetPhotoAlbumAction() {
+
+		Validator::required(isset($_POST['title'], $_POST['photoIDs']), __METHOD__);
+
+		$album = new Album(null);
+		Response::json($album->addSetPhoto($_POST['title'], $_POST['photoIDs']), JSON_NUMERIC_CHECK);
 
 	}
 

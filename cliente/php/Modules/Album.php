@@ -52,6 +52,41 @@ final class Album {
 	}
 
 	/**
+	 * @autor Homebook
+	 * @return string|false ID of the created album.
+	 */
+	public function addSetPhoto($title = 'Untitled', $photoIDs = null) {
+
+		// Call plugins
+		Plugins::get()->activate(__METHOD__, 0, func_get_args());
+
+		// Get current user id
+		$current_user_id = getCurrentUser();
+		$user_id  = getUserId($current_user_id);
+
+		// Properties
+		$id       = generateID();
+		$sysstamp = time();
+		$public   = 0;
+		$visible  = 1;
+
+		// Database
+		$query  = Database::prepare(Database::get(), "INSERT INTO ? (id, title, sysstamp, public, visible, user_id) VALUES ('?', '?', '?', '?', '?', '?')", array(LYCHEE_TABLE_ALBUMS, $id, $title, $sysstamp, $public, $visible, $user_id));
+		$result = Database::execute(Database::get(), $query, __METHOD__, __LINE__);
+
+		// Modificación Homebook. Cambia las fotos enviadas a el nuevo album creado
+		$query  = Database::prepare(Database::get(), "UPDATE ? SET album = '?' WHERE id IN (?)", array(LYCHEE_TABLE_PHOTOS, $id, $photoIDs));
+		$result = Database::execute(Database::get(), $query, __METHOD__, __LINE__);	
+
+		// Call plugins
+		Plugins::get()->activate(__METHOD__, 1, func_get_args());
+
+		if ($result===false) return false;
+		return $id;
+
+	}
+
+	/**
 	 * Rurns album-attributes into a front-end friendly format. Note that some attributes remain unchanged.
 	 * @return array Returns album-attributes in a normalized structure.
 	 */

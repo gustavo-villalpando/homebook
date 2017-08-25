@@ -28,3 +28,11 @@ phpunit.phar
 
 tests/_output/*
 tests/_support/_generated
+
+# sublime sftp
+sftp-config-dev.json
+sftp-config.json
+
+# gitingnore
+.gitignore
+*.gitignore

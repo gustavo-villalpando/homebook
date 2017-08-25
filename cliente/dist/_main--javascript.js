@@ -157,13 +157,79 @@ album.add = function () {
 		api.post('Album::add', params, function (data) {
 
 			if (data !== false && isNumber(data)) {
-				console.log('entro if');
 				albums.refresh();
 				lychee.goto(data);
 			} else {
-				console.log('entro else');
 				lychee.error(null, params, data);
 			}
+		});
+	};
+
+	basicModal.show({
+		body: '<p>Ingresa el t\xEDtulo para el nuevo album: <input class=\'text\' name=\'title\' type=\'text\' maxlength=\'50\' placeholder=\'T\xEDtulo\' value=\'T\xEDtulo\'></p>',
+		buttons: {
+			action: {
+				title: 'Crear Álbum',
+				fn: action
+			},
+			cancel: {
+				title: 'Cancelar',
+				fn: basicModal.close
+			}
+		}
+	});
+};
+
+album.addSetPhoto = function (photoIDs) {
+
+	var action = function action(data) {
+
+		var title = data.title;
+
+		var isNumber = function isNumber(n) {
+			return !isNaN(parseFloat(n)) && isFinite(n);
+		};
+
+		basicModal.close();
+
+		// @Homebook Inicia Efecto de eliminar fotografias cuando se mueven de album
+		var nextPhoto = null;
+		var previousPhoto = null;
+
+		if (!photoIDs) return false;
+		if (photoIDs instanceof Array === false) photoIDs = [photoIDs];
+
+		photoIDs.forEach(function (id, index, array) {
+
+			// Change reference for the next and previous photo
+			if (album.json.content[id].nextPhoto !== '' || album.json.content[id].previousPhoto !== '') {
+
+				nextPhoto = album.json.content[id].nextPhoto;
+				previousPhoto = album.json.content[id].previousPhoto;
+
+				album.json.content[previousPhoto].nextPhoto = nextPhoto;
+				album.json.content[nextPhoto].previousPhoto = previousPhoto;
+			}
+
+			delete album.json.content[id];
+			view.album.content.delete(id);
+		});
+
+		albums.refresh();
+
+		// Go to next photo if there is a next photo and
+		// next photo is not the current one. Show album otherwise.
+		if (visible.photo() && nextPhoto != null && nextPhoto !== photo.getID()) lychee.goto(album.getID() + '/' + nextPhoto);else if (!visible.albums()) lychee.goto(album.getID());
+		// @Homebook Termina Efecto de eliminar fotografias cuando se mueven de album
+
+		var params = {
+			title: title,
+			photoIDs: photoIDs.join()
+		};
+
+		api.post('Album::addSetPhoto', params, function (data) {
+
+			if (data !== true && isNumber(data) !== true) lychee.error(null, params, data);
 		});
 	};
 
@@ -1186,9 +1252,8 @@ contextMenu.move = function (photoIDs, e) {
 	api.post('Albums::get', {}, function (data) {
 
 		if (data.num === 0 || data.num === 1) {
-
 			// Show only 'Add album' when no album available
-			items = [{ title: 'Nuevo Álbum', fn: album.add }];
+			items = [{ title: 'Nuevo Álbum', fn: album.addSetPhoto(photoIDs) }];
 		} else {
 
 			// Generate list of albums

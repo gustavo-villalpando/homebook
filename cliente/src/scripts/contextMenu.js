@@ -253,10 +253,9 @@ contextMenu.move = function(photoIDs, e) {
 	api.post('Albums::get', {}, function(data) {
 
 		if (data.num===0 || data.num===1) {
-
 			// Show only 'Add album' when no album available
 			items = [
-				{ title: 'Nuevo Álbum', fn: album.add }
+				{ title: 'Nuevo Álbum',fn: album.addSetPhoto(photoIDs) }
 			]
 
 		} else {
