@@ -51,6 +51,9 @@ lychee.init = function() {
 			// Show dialog when there is no username and password
 			if (data.config.login===false) settings.createLogin()
 
+			// @Homebook. NavLinks Init
+			navLinks.init()
+
 		} else if (data.status===1) {
 
 			// Logged out
@@ -58,6 +61,9 @@ lychee.init = function() {
 			lychee.checkForUpdates = data.config.checkForUpdates || '1'
 
 			lychee.setMode('public')
+
+			// @Homebook. Ocultamos  el navegador de albumes
+			navLinks.hide()
 
 		} else if (data.status===0) {
 
@@ -69,6 +75,9 @@ lychee.init = function() {
 			lychee.content.hide()
 			$('body').append(build.no_content('cog'))
 			settings.createConfig()
+
+			// @Homebook. Ocultamos  el navegador de albumes
+			//navLinks.hide()
 
 			return true
 

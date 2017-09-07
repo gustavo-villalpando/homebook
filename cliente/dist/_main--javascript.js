@@ -1585,7 +1585,7 @@ $(document).ready(function () {
 	header.bind();
 
 	// NavLinks
-	navLinks.init();
+	navLinks.bind();
 
 	// Image View
 	lychee.imageview.on(eventName, '.arrow_wrapper--previous', photo.previous).on(eventName, '.arrow_wrapper--next', photo.next);
@@ -1847,6 +1847,9 @@ lychee.init = function () {
 
 			// Show dialog when there is no username and password
 			if (data.config.login === false) settings.createLogin();
+
+			// @Homebook. NavLinks Init
+			navLinks.show();
 		} else if (data.status === 1) {
 
 			// Logged out
@@ -1854,6 +1857,9 @@ lychee.init = function () {
 			lychee.checkForUpdates = data.config.checkForUpdates || '1';
 
 			lychee.setMode('public');
+
+			// @Homebook. Ocultamos  el navegador de albumes
+			navLinks.hide();
 		} else if (data.status === 0) {
 
 			// No configuration
@@ -1864,6 +1870,9 @@ lychee.init = function () {
 			lychee.content.hide();
 			$('body').append(build.no_content('cog'));
 			settings.createConfig();
+
+			// @Homebook. Ocultamos  el navegador de albumes
+			//navLinks.hide()
 
 			return true;
 		}
@@ -2401,13 +2410,6 @@ navLinks = {
 
 navLinks.init = function () {
 
-	if (lychee.publicMode === true) {
-
-		navLinks.hide();
-
-		return false;
-	}
-
 	navLinks.show();
 	navLinks.bind();
 
@@ -2432,7 +2434,9 @@ navLinks.bind = function () {
 
 navLinks.show = function () {
 
-	navLinks.dom().removeClass('navLinks--hidden');
+	if (visible.navLinks()) return false;
+
+	navLinks._dom.removeClass('navLinks--hidden');
 
 	var albumID = '';
 	var hash = document.location.hash.replace('#', '').split('/');
@@ -2445,6 +2449,15 @@ navLinks.show = function () {
 
 	navLinks.currentLink = navLinks.dom('a[data-id="' + albumID + '"]');
 	navLinks.currentLink.addClass('selected');
+
+	return true;
+};
+
+navLinks.hide = function () {
+
+	if (!visible.navLinks()) return false;
+
+	navLinks.dom().addClass('navLinks--hidden');
 
 	return true;
 };
@@ -2476,22 +2489,14 @@ navLinks.removeExtraLink = function () {
 	return true;
 };
 
-navLinks.hide = function (e) {
-
-	if (lychee.publicMode === true && !visible.navLinks()) return false;
-
-	navLinks.dom().addClass('navLinks--hidden');
-
-	return true;
-};
-
 navLinks.selectLink = function () {
 
 	$this = $(this);
 
 	if ($this.hasClass('selected') === true) return false;
 
-	navLinks.currentLink.removeClass('selected');
+	if (navLinks.currentLink !== null) navLinks.currentLink.removeClass('selected');
+
 	$this.addClass('selected');
 	navLinks.currentLink = $this;
 

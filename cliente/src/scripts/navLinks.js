@@ -17,17 +17,11 @@ navLinks = {
 
 navLinks.init = function() {
 
-	if (lychee.publicMode===true) {
-		
-		navLinks.hide()
-
-		return false
-	}
-
 	navLinks.show()
 	navLinks.bind()
 
 	return true
+
 }
 
 navLinks.dom = function(selector) {
@@ -50,7 +44,9 @@ navLinks.bind = function() {
 
 navLinks.show = function() {
 
-	navLinks.dom().removeClass('navLinks--hidden')
+	if (visible.navLinks()) return false
+
+	navLinks._dom.removeClass('navLinks--hidden')
 
 	let albumID = ''
 	let hash    = document.location.hash.replace('#', '').split('/')
@@ -63,6 +59,16 @@ navLinks.show = function() {
 	
 	navLinks.currentLink = navLinks.dom('a[data-id="' + albumID + '"]')
 	navLinks.currentLink.addClass('selected')
+
+	return true
+
+}
+
+navLinks.hide = function() {
+
+	if (!visible.navLinks()) return false
+
+	navLinks.dom().addClass('navLinks--hidden')
 
 	return true
 
@@ -96,23 +102,14 @@ navLinks.removeExtraLink = function() {
 	return true
 }
 
-navLinks.hide = function(e) {
-	
-	if (lychee.publicMode===true && !visible.navLinks()) return false
-	
-	navLinks.dom().addClass('navLinks--hidden')
-
-	return true
-
-}
-
 navLinks.selectLink = function (){
 
 	$this = $(this)
 	
 	if ($this.hasClass('selected')===true) return false
 
-	navLinks.currentLink.removeClass('selected')
+	if (navLinks.currentLink!==null) navLinks.currentLink.removeClass('selected')
+	
 	$this.addClass('selected')
 	navLinks.currentLink =  $this
 

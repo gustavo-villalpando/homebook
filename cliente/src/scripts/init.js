@@ -16,9 +16,6 @@ $(document).ready(function() {
 	// Header
 	header.bind()
 
-	// NavLinks
-	navLinks.init()
-
 	// Image View
 	lychee.imageview
 		.on(eventName, '.arrow_wrapper--previous', photo.previous)
