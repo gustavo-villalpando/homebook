@@ -1031,13 +1031,20 @@ contextMenu = {};
 
 contextMenu.add = function (e) {
 
-	var items = [{ title: build.iconic('image') + 'Subir Fotografía', fn: function fn() {
-			return $('#upload_files').click();
-		} }, {}, { title: build.iconic('link-intact') + 'Import from Link', fn: upload.start.url }, { title: build.iconic('dropbox', 'ionicons') + 'Import from Dropbox', fn: upload.start.dropbox }, { title: build.iconic('terminal') + 'Import from Server', fn: upload.start.server }, {}, { title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }];
+	// @Homebook. Inicia - Candado para cargar fotografias solo cuando se esta en un album
+	var albumID = album.getID();
 
-	if (album.json === null) {
+	var items = '';
+
+	if (albumID > 0) {
+		items = [{ title: build.iconic('image') + 'Subir Fotografía', fn: function fn() {
+				return $('#upload_files').click();
+			} }, {}, { title: build.iconic('link-intact') + 'Import from Link', fn: upload.start.url }, { title: build.iconic('dropbox', 'ionicons') + 'Import from Dropbox', fn: upload.start.dropbox }, { title: build.iconic('terminal') + 'Import from Server', fn: upload.start.server }, {}, { title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }];
+	} else {
 		items = [{ title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }];
 	}
+	// @Homebook. Termina - Candado para cargar fotografias solo cuando se esta en un album
+
 
 	basicContext.show(items, e.originalEvent);
 
@@ -4546,7 +4553,10 @@ view.album = {
 			var photosData = '';
 
 			// @Homebook agregamos la caja de subir fotografia
-			photosData = build.createBox('Subir Fotografía', 'upload-photo-box');
+			var albumID = album.getID();
+
+			if (albumID > 0) photosData = build.createBox('Subir Fotografía', 'upload-photo-box');
+			// @Homebook terminamos de agregar la caja de subir fotografia
 
 			if (album.json.content && album.json.content !== false) {
 

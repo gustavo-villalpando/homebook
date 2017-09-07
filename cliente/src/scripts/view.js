@@ -153,7 +153,10 @@ view.album = {
 			let photosData = ''
 
 			// @Homebook agregamos la caja de subir fotografia
-			photosData = build.createBox('Subir Fotografía', 'upload-photo-box')
+			let albumID = album.getID()
+
+			if (albumID>0) photosData = build.createBox('Subir Fotografía', 'upload-photo-box')
+			// @Homebook terminamos de agregar la caja de subir fotografia
 
 			if (album.json.content && album.json.content!==false) {
 
