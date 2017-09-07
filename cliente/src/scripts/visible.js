@@ -41,6 +41,12 @@ visible.header = function() {
 	return true
 }
 
+//@Homebook. Funcion para la visibilidad de nav-links
+visible.navLinks = function() {
+	if (navLinks.dom().hasClass('navLinks--hidden')===true) return false
+	return true
+}
+
 visible.contextMenu = function() {
 	return basicContext.visible()
 }

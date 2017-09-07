@@ -20,7 +20,7 @@ Header add Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
 
 # ---
 # Las siguientes lineas son para que los archivos expiren impediatamente, esta lineas deben
-# esta comentadas cuando el sistema este en productivo y descomentadas cuando este en desarrollo
+# estar comentadas cuando el sistema este en productivo y descomentadas cuando este en desarrollo
 # ---
 <IfModule mod_expires.c>
   ExpiresActive on

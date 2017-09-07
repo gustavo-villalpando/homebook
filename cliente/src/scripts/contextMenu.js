@@ -16,6 +16,13 @@ contextMenu.add = function(e) {
 		{ title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }
 	]
 
+	if (album.json===null) {
+		items = [
+			{ title: build.iconic('folder') + 'Nuevo Álbum', fn: album.add }
+		]
+	}
+	
+
 	basicContext.show(items, e.originalEvent)
 
 	upload.notify()
@@ -41,6 +48,9 @@ contextMenu.settings = function(e) {
 }
 
 contextMenu.album = function(albumID, e) {
+
+	//@Homebook. Evitamos el contexMenu en el nav-link
+	if ($(e.target).hasClass('link')===true) return false
 
 	// Notice for 'Merge':
 	// fn must call basicContext.close() first,

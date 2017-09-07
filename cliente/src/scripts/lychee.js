@@ -23,6 +23,7 @@ lychee = {
 	dropbox         : false,
 	dropboxKey      : '',
 
+	navLinks		: $('.nav-links'),
 	content         : $('.content'),
 	imageview       : $('#imageview')
 
@@ -144,8 +145,8 @@ lychee.logout = function() {
 }
 
 lychee.goto = function(url = '') {
-
-	url = '#' + url
+	if (url!=='0') 		url = '#' + url
+	else 				url = '#'
 
 	history.pushState(null, null, url)
 	lychee.load()

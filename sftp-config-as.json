@@ -14,12 +14,12 @@
     "confirm_sync": true,
     "confirm_overwrite_newer": false,
     
-    "host": "desarrollogus.kiubix.link",
-    "user": "desarrolloguskiu",
-    "password": "lAwCXT#U$hc@", 
+    "host": "ftp.homebook.x10host.com",
+    "user": "gusftphome@homebook.x10host.com",
+    "password": "dos+dos=cuatro", 
      "port": "21",
      
-    "remote_path": "/public_html/homebook/",
+    "remote_path": "/",
     "ignore_regexes": [
         "\\.sublime-(project|workspace)", "sftp-config(-alt\\d?)?\\.json",
         "sftp-settings\\.json", "/venv/", "\\.svn/", "\\.hg/", "\\.git/",

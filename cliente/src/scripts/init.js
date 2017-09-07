@@ -16,6 +16,9 @@ $(document).ready(function() {
 	// Header
 	header.bind()
 
+	// NavLinks
+	navLinks.init()
+
 	// Image View
 	lychee.imageview
 		.on(eventName, '.arrow_wrapper--previous', photo.previous)
@@ -97,6 +100,8 @@ $(document).ready(function() {
 		// Navigation
 		.on('click', '.album', function() { lychee.goto($(this).attr('data-id')) })
 		.on('click', '.photo', function() { lychee.goto(album.getID() + '/' + $(this).attr('data-id')) })
+		.on('click', '#upload-photo-box', function() { $('#upload_files').click(); })
+		.on('click', '#create-album-box', album.add)
 
 		// Context Menu
 		.on('contextmenu', '.photo', function(e) { contextMenu.photo(photo.getID(), e) })

@@ -4,6 +4,35 @@
 
 build = {}
 
+build.navLink = function(text, link, classes = '') {
+	let html = ''
+
+	html += lychee.html`
+			<li>
+				<a class='album $${ classes }' data-id='$${ link }'>
+					$${ text }
+				</a>
+			</li>`
+
+	return html
+}
+
+build.createBox = function(text, actionId) {
+	let html = ''
+
+	html += lychee.html`
+			<div id='$${ actionId }' class='create-box'>
+				<div class='create-box-content'>
+					<svg class='iconic' >
+						<use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#plus'></use>
+					</svg>
+					$${ text }
+				</div>
+			</div>`
+
+	return html
+}
+
 build.iconic = function(icon, classes = '') {
 
 	let html = ''

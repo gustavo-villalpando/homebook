@@ -33,11 +33,14 @@ view.albums = {
 				albums.parse(albums.json.smartalbums.unsorted)
 				albums.parse(albums.json.smartalbums.public)
 
+				// @Homebook agregamos la caja de crear album
+				albumsData += build.createBox('Nuevo Álbum', 'create-album-box')
+
 				// Original
 				// smartData = build.divider('Smart Albums') + build.album(albums.json.smartalbums.unsorted) + build.album(albums.json.smartalbums.public) + build.album(albums.json.smartalbums.starred) + build.album(albums.json.smartalbums.recent)
 				
 				// Custom by Homebook
-				smartData = build.divider('Nuestros Proyectos') + build.album(albums.json.smartalbums.public) 
+				//smartData = build.divider('Nuestros Proyectos') + build.album(albums.json.smartalbums.public) 
 
 			}
 
@@ -53,8 +56,8 @@ view.albums = {
 					albumsData += build.album(this)
 				})
 
-				// Add divider
-				if (lychee.publicMode===false) albumsData = build.divider('Mis Álbumes') + build.album(albums.json.smartalbums.starred) + build.album(albums.json.smartalbums.recent) + albumsData
+				// Add albums only to user log
+				if (lychee.publicMode===false) albumsData = albumsData
 
 			}
 
@@ -135,6 +138,7 @@ view.album = {
 				default:
 					if (album.json.init) sidebar.changeAttr('title', album.json.title)
 					lychee.setTitle(album.json.title, true)
+					navLinks.addExtraLink(album.getID(), album.json.title)
 					break
 			}
 
@@ -147,6 +151,9 @@ view.album = {
 		init: function() {
 
 			let photosData = ''
+
+			// @Homebook agregamos la caja de subir fotografia
+			photosData = build.createBox('Subir Fotografía', 'upload-photo-box')
 
 			if (album.json.content && album.json.content!==false) {
 

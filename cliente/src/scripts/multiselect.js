@@ -25,7 +25,7 @@ multiselect.show = function(e) {
 
 	if (lychee.publicMode)                          return false
 	if (!visible.albums() && !visible.album())      return false
-	if ($('.album:hover, .photo:hover').length!==0) return false
+	if ($('.album:hover, .photo:hover, #upload-photo-box:hover, #create-album-box:hover').length!==0) return false
 	if (visible.search())                           return false
 	if (visible.multiselect())                      $('#multiselect').remove()
 

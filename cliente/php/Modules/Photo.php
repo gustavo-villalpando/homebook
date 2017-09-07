@@ -131,13 +131,11 @@ final class Photo {
 			Response::error('Photo format not supported!');
 		}
 
-		// @Bug 1. Función exif_imagetype no funciona en servidor
 		// Verify image
-		$type = @exif_imagetype($file['tmp_name']);
+		$type = exif_imagetype($file['tmp_name']);
 		
-		// Descomenta las siguientes lineas para una solucion temporal al bug
-		// $info = getimagesize($file['tmp_name']);
-		// $type = $info[2];
+		$info = getimagesize($file['tmp_name']);
+		$type = $info[2];
 
 		if (!in_array($type, self::$validTypes, true)) {
 			Log::error(Database::get(), __METHOD__, __LINE__, 'Photo type not supported');
@@ -838,13 +836,10 @@ final class Photo {
 			}
 
 		}
-		// @Bug 2. Función exif_read_data no funciona en servidor
-		// Read EXIF
-		if ($info['mime']=='image/jpeg') $exif = @exif_read_data($url, 'EXIF', false, false);
-		else $exif = false;
 
-		// Descomenta la siguiente linea para una solucion temporal al bug
-		// $exif = false;
+		// Read EXIF
+		if ($info['mime']=='image/jpeg') $exif = exif_read_data($url, 'EXIF', false, false);
+		else $exif = false;
 
 		// EXIF Metadata
 		if ($exif!==false) {
