@@ -22,6 +22,7 @@ paths.view = {
 		'./scripts/build.js',
 		'./scripts/api.js',
 		'./scripts/header.js',
+		'./scripts/headerImage.js',
 		'./scripts/navLinks.js',
 		'./scripts/visible.js',
 		'./scripts/sidebar.js',

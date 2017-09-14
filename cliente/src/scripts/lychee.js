@@ -54,6 +54,8 @@ lychee.init = function() {
 			// @Homebook. NavLinks Init
 			navLinks.init()
 
+			// @Homebook. Header Image
+			headerImage.load()
 		} else if (data.status===1) {
 
 			// Logged out

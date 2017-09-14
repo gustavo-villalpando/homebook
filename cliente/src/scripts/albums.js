@@ -14,9 +14,6 @@ albums.load = function() {
 
 	lychee.animate('.content', 'contentZoomOut')
 
-	//@Homebook
-	navLinks.defaultLink.trigger('click');
-
 	if (albums.json===null) {
 
 		api.post('Albums::get', {}, function(data) {

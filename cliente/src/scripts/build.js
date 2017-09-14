@@ -4,6 +4,38 @@
 
 build = {}
 
+build.headerImage = function(urlImage, haveHeaderTitle = false, title = '', description = '') {
+	let html = ''
+
+	html += lychee.html`
+			<div class='box-image' style='background-image: url($${ urlImage })'></div>
+			<div class='cover'></div>
+			<div class='header-inner'>`
+
+	if (haveHeaderTitle!==false) {
+		console.log('si tiene titulo')
+		html += lychee.html`
+			<div class='header-caption'>
+				<div class='ph-header-title'>
+					$${ title }
+				</div>
+				<hr class='hr-short'>
+				<div class='ph-header-description' data-max-words='40'>
+					<p>
+						$${ description }
+					</p>
+				</div>
+			</div>`
+	} else {
+		console.log('no tiene titulo')
+		console.log(haveHeaderTitle)
+	}
+
+	html += lychee.html`</div>`
+
+	return html
+}
+
 build.navLink = function(text, link, classes = '') {
 	let html = ''
 

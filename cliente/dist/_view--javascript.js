@@ -1,26 +1,29 @@
 "use strict";
 
-var _templateObject = _taggedTemplateLiteral(["\n\t\t\t<li>\n\t\t\t\t<a class='album $", "' data-id='$", "'>\n\t\t\t\t\t$", "\n\t\t\t\t</a>\n\t\t\t</li>"], ["\n\t\t\t<li>\n\t\t\t\t<a class='album $", "' data-id='$", "'>\n\t\t\t\t\t$", "\n\t\t\t\t</a>\n\t\t\t</li>"]),
-    _templateObject2 = _taggedTemplateLiteral(["\n\t\t\t<div id='$", "' class='create-box'>\n\t\t\t\t<div class='create-box-content'>\n\t\t\t\t\t<svg class='iconic' >\n\t\t\t\t\t\t<use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#plus'></use>\n\t\t\t\t\t</svg>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t</div>"], ["\n\t\t\t<div id='$", "' class='create-box'>\n\t\t\t\t<div class='create-box-content'>\n\t\t\t\t\t<svg class='iconic' >\n\t\t\t\t\t\t<use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#plus'></use>\n\t\t\t\t\t</svg>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t</div>"]),
-    _templateObject3 = _taggedTemplateLiteral(["<svg class='iconic $", "'><use xlink:href='#$", "' /></svg>"], ["<svg class='iconic $", "'><use xlink:href='#$", "' /></svg>"]),
-    _templateObject4 = _taggedTemplateLiteral(["<div class='divider'><h1>$", "</h1></div>"], ["<div class='divider'><h1>$", "</h1></div>"]),
-    _templateObject5 = _taggedTemplateLiteral(["<div id='$", "' class='edit'>", "</div>"], ["<div id='$", "' class='edit'>", "</div>"]),
-    _templateObject6 = _taggedTemplateLiteral(["<div id='multiselect' style='top: $", "px; left: $", "px;'></div>"], ["<div id='multiselect' style='top: $", "px; left: $", "px;'></div>"]),
-    _templateObject7 = _taggedTemplateLiteral(["\n\t        <div class='album' data-id='$", "'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' data-overlay='$", "' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t                <a>$", "</a>\n\t            </div>\n\t        "], ["\n\t        <div class='album' data-id='$", "'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' data-overlay='$", "' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t                <a>$", "</a>\n\t            </div>\n\t        "]),
-    _templateObject8 = _taggedTemplateLiteral(["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t        </div>\n\t\t        "]),
-    _templateObject9 = _taggedTemplateLiteral(["\n\t        <div class='photo' data-album-id='$", "' data-id='$", "'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t        "], ["\n\t        <div class='photo' data-album-id='$", "' data-id='$", "'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t        "]),
-    _templateObject10 = _taggedTemplateLiteral(["<a><span title='Camera Date'>", "</span>$", "</a>"], ["<a><span title='Camera Date'>", "</span>$", "</a>"]),
-    _templateObject11 = _taggedTemplateLiteral(["<a>$", "</a>"], ["<a>$", "</a>"]),
-    _templateObject12 = _taggedTemplateLiteral(["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t        </div>\n\t\t        "]),
-    _templateObject13 = _taggedTemplateLiteral(["<img id='image' class='$", "' src='$", "' draggable='false'>"], ["<img id='image' class='$", "' src='$", "' draggable='false'>"]),
-    _templateObject14 = _taggedTemplateLiteral(["<img id='image' class='$", "' src='$", "' srcset='$", " 1920w, $", " $", "w' draggable='false'>"], ["<img id='image' class='$", "' src='$", "' srcset='$", " 1920w, $", " $", "w' draggable='false'>"]),
-    _templateObject15 = _taggedTemplateLiteral(["\n\t        <h1>$", "</h1>\n\t        <div class='rows'>\n\t        "], ["\n\t        <h1>$", "</h1>\n\t        <div class='rows'>\n\t        "]),
-    _templateObject16 = _taggedTemplateLiteral(["\n\t\t        <div class='row'>\n\t\t            <a class='name'>$", "</a>\n\t\t            <a class='status'></a>\n\t\t            <p class='notice'></p>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='row'>\n\t\t            <a class='name'>$", "</a>\n\t\t            <a class='status'></a>\n\t\t            <p class='notice'></p>\n\t\t        </div>\n\t\t        "]),
-    _templateObject17 = _taggedTemplateLiteral(["<a class='tag'>$", "<span data-index='$", "'>", "</span></a>"], ["<a class='tag'>$", "<span data-index='$", "'>", "</span></a>"]),
-    _templateObject18 = _taggedTemplateLiteral(["$", "", ""], ["$", "", ""]),
-    _templateObject19 = _taggedTemplateLiteral(["<span class='attr_$", "'>$", "</span>"], ["<span class='attr_$", "'>$", "</span>"]),
-    _templateObject20 = _taggedTemplateLiteral(["\n\t\t\t         <tr>\n\t\t\t             <td>$", "</td>\n\t\t\t             <td>", "</td>\n\t\t\t         </tr>\n\t\t\t         "], ["\n\t\t\t         <tr>\n\t\t\t             <td>$", "</td>\n\t\t\t             <td>", "</td>\n\t\t\t         </tr>\n\t\t\t         "]),
-    _templateObject21 = _taggedTemplateLiteral(["\n\t\t         <div class='sidebar__divider'>\n\t\t             <h1>$", "</h1>\n\t\t         </div>\n\t\t         <div id='tags'>\n\t\t             <div class='attr_$", "'>", "</div>\n\t\t             ", "\n\t\t         </div>\n\t\t         "], ["\n\t\t         <div class='sidebar__divider'>\n\t\t             <h1>$", "</h1>\n\t\t         </div>\n\t\t         <div id='tags'>\n\t\t             <div class='attr_$", "'>", "</div>\n\t\t             ", "\n\t\t         </div>\n\t\t         "]);
+var _templateObject = _taggedTemplateLiteral(["\n\t\t\t<div class='box-image' style='background-image: url($", ")'></div>\n\t\t\t<div class='cover'></div>\n\t\t\t<div class='header-inner'>"], ["\n\t\t\t<div class='box-image' style='background-image: url($", ")'></div>\n\t\t\t<div class='cover'></div>\n\t\t\t<div class='header-inner'>"]),
+    _templateObject2 = _taggedTemplateLiteral(["\n\t\t\t<div class='header-caption'>\n\t\t\t\t<div class='ph-header-title'>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t\t<hr class='hr-short'>\n\t\t\t\t<div class='ph-header-description' data-max-words='40'>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t$", "\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t</div>"], ["\n\t\t\t<div class='header-caption'>\n\t\t\t\t<div class='ph-header-title'>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t\t<hr class='hr-short'>\n\t\t\t\t<div class='ph-header-description' data-max-words='40'>\n\t\t\t\t\t<p>\n\t\t\t\t\t\t$", "\n\t\t\t\t\t</p>\n\t\t\t\t</div>\n\t\t\t</div>"]),
+    _templateObject3 = _taggedTemplateLiteral(["</div>"], ["</div>"]),
+    _templateObject4 = _taggedTemplateLiteral(["\n\t\t\t<li>\n\t\t\t\t<a class='album $", "' data-id='$", "'>\n\t\t\t\t\t$", "\n\t\t\t\t</a>\n\t\t\t</li>"], ["\n\t\t\t<li>\n\t\t\t\t<a class='album $", "' data-id='$", "'>\n\t\t\t\t\t$", "\n\t\t\t\t</a>\n\t\t\t</li>"]),
+    _templateObject5 = _taggedTemplateLiteral(["\n\t\t\t<div id='$", "' class='create-box'>\n\t\t\t\t<div class='create-box-content'>\n\t\t\t\t\t<svg class='iconic' >\n\t\t\t\t\t\t<use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#plus'></use>\n\t\t\t\t\t</svg>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t</div>"], ["\n\t\t\t<div id='$", "' class='create-box'>\n\t\t\t\t<div class='create-box-content'>\n\t\t\t\t\t<svg class='iconic' >\n\t\t\t\t\t\t<use xmlns:xlink='http://www.w3.org/1999/xlink' xlink:href='#plus'></use>\n\t\t\t\t\t</svg>\n\t\t\t\t\t$", "\n\t\t\t\t</div>\n\t\t\t</div>"]),
+    _templateObject6 = _taggedTemplateLiteral(["<svg class='iconic $", "'><use xlink:href='#$", "' /></svg>"], ["<svg class='iconic $", "'><use xlink:href='#$", "' /></svg>"]),
+    _templateObject7 = _taggedTemplateLiteral(["<div class='divider'><h1>$", "</h1></div>"], ["<div class='divider'><h1>$", "</h1></div>"]),
+    _templateObject8 = _taggedTemplateLiteral(["<div id='$", "' class='edit'>", "</div>"], ["<div id='$", "' class='edit'>", "</div>"]),
+    _templateObject9 = _taggedTemplateLiteral(["<div id='multiselect' style='top: $", "px; left: $", "px;'></div>"], ["<div id='multiselect' style='top: $", "px; left: $", "px;'></div>"]),
+    _templateObject10 = _taggedTemplateLiteral(["\n\t        <div class='album' data-id='$", "'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' data-overlay='$", "' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t                <a>$", "</a>\n\t            </div>\n\t        "], ["\n\t        <div class='album' data-id='$", "'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' width='200' height='200' alt='Photo thumbnail' data-overlay='false' draggable='false'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' data-overlay='$", "' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t                <a>$", "</a>\n\t            </div>\n\t        "]),
+    _templateObject11 = _taggedTemplateLiteral(["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t            <a class='badge $", "'>", "</a>\n\t\t        </div>\n\t\t        "]),
+    _templateObject12 = _taggedTemplateLiteral(["\n\t        <div class='photo' data-album-id='$", "' data-id='$", "'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t        "], ["\n\t        <div class='photo' data-album-id='$", "' data-id='$", "'>\n\t            <img src='$", "' srcset='$", " 1.5x' width='200' height='200' alt='Photo thumbnail' draggable='false'>\n\t            <div class='overlay'>\n\t                <h1 title='$", "'>$", "</h1>\n\t        "]),
+    _templateObject13 = _taggedTemplateLiteral(["<a><span title='Camera Date'>", "</span>$", "</a>"], ["<a><span title='Camera Date'>", "</span>$", "</a>"]),
+    _templateObject14 = _taggedTemplateLiteral(["<a>$", "</a>"], ["<a>$", "</a>"]),
+    _templateObject15 = _taggedTemplateLiteral(["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='badges'>\n\t\t            <a class='badge $", " icn-star'>", "</a>\n\t\t            <a class='badge $", " icn-share'>", "</a>\n\t\t        </div>\n\t\t        "]),
+    _templateObject16 = _taggedTemplateLiteral(["<img id='image' class='$", "' src='$", "' draggable='false'>"], ["<img id='image' class='$", "' src='$", "' draggable='false'>"]),
+    _templateObject17 = _taggedTemplateLiteral(["<img id='image' class='$", "' src='$", "' srcset='$", " 1920w, $", " $", "w' draggable='false'>"], ["<img id='image' class='$", "' src='$", "' srcset='$", " 1920w, $", " $", "w' draggable='false'>"]),
+    _templateObject18 = _taggedTemplateLiteral(["\n\t        <h1>$", "</h1>\n\t        <div class='rows'>\n\t        "], ["\n\t        <h1>$", "</h1>\n\t        <div class='rows'>\n\t        "]),
+    _templateObject19 = _taggedTemplateLiteral(["\n\t\t        <div class='row'>\n\t\t            <a class='name'>$", "</a>\n\t\t            <a class='status'></a>\n\t\t            <p class='notice'></p>\n\t\t        </div>\n\t\t        "], ["\n\t\t        <div class='row'>\n\t\t            <a class='name'>$", "</a>\n\t\t            <a class='status'></a>\n\t\t            <p class='notice'></p>\n\t\t        </div>\n\t\t        "]),
+    _templateObject20 = _taggedTemplateLiteral(["<a class='tag'>$", "<span data-index='$", "'>", "</span></a>"], ["<a class='tag'>$", "<span data-index='$", "'>", "</span></a>"]),
+    _templateObject21 = _taggedTemplateLiteral(["$", "", ""], ["$", "", ""]),
+    _templateObject22 = _taggedTemplateLiteral(["<span class='attr_$", "'>$", "</span>"], ["<span class='attr_$", "'>$", "</span>"]),
+    _templateObject23 = _taggedTemplateLiteral(["\n\t\t\t         <tr>\n\t\t\t             <td>$", "</td>\n\t\t\t             <td>", "</td>\n\t\t\t         </tr>\n\t\t\t         "], ["\n\t\t\t         <tr>\n\t\t\t             <td>$", "</td>\n\t\t\t             <td>", "</td>\n\t\t\t         </tr>\n\t\t\t         "]),
+    _templateObject24 = _taggedTemplateLiteral(["\n\t\t         <div class='sidebar__divider'>\n\t\t             <h1>$", "</h1>\n\t\t         </div>\n\t\t         <div id='tags'>\n\t\t             <div class='attr_$", "'>", "</div>\n\t\t             ", "\n\t\t         </div>\n\t\t         "], ["\n\t\t         <div class='sidebar__divider'>\n\t\t             <h1>$", "</h1>\n\t\t         </div>\n\t\t         <div id='tags'>\n\t\t             <div class='attr_$", "'>", "</div>\n\t\t             ", "\n\t\t         </div>\n\t\t         "]);
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
@@ -40,12 +43,34 @@ function gup(b) {
 
 build = {};
 
+build.headerImage = function (urlImage) {
+	var haveHeaderTitle = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+	var title = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+	var description = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : '';
+
+	var html = '';
+
+	html += lychee.html(_templateObject, urlImage);
+
+	if (haveHeaderTitle !== false) {
+		console.log('si tiene titulo');
+		html += lychee.html(_templateObject2, title, description);
+	} else {
+		console.log('no tiene titulo');
+		console.log(haveHeaderTitle);
+	}
+
+	html += lychee.html(_templateObject3);
+
+	return html;
+};
+
 build.navLink = function (text, link) {
 	var classes = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
 
 	var html = '';
 
-	html += lychee.html(_templateObject, classes, link, text);
+	html += lychee.html(_templateObject4, classes, link, text);
 
 	return html;
 };
@@ -53,7 +78,7 @@ build.navLink = function (text, link) {
 build.createBox = function (text, actionId) {
 	var html = '';
 
-	html += lychee.html(_templateObject2, actionId, text);
+	html += lychee.html(_templateObject5, actionId, text);
 
 	return html;
 };
@@ -64,7 +89,7 @@ build.iconic = function (icon) {
 
 	var html = '';
 
-	html += lychee.html(_templateObject3, classes, icon);
+	html += lychee.html(_templateObject6, classes, icon);
 
 	return html;
 };
@@ -73,7 +98,7 @@ build.divider = function (title) {
 
 	var html = '';
 
-	html += lychee.html(_templateObject4, title);
+	html += lychee.html(_templateObject7, title);
 
 	return html;
 };
@@ -82,14 +107,14 @@ build.editIcon = function (id) {
 
 	var html = '';
 
-	html += lychee.html(_templateObject5, id, build.iconic('pencil'));
+	html += lychee.html(_templateObject8, id, build.iconic('pencil'));
 
 	return html;
 };
 
 build.multiselect = function (top, left) {
 
-	return lychee.html(_templateObject6, top, left);
+	return lychee.html(_templateObject9, top, left);
 };
 
 build.album = function (data) {
@@ -100,11 +125,11 @@ build.album = function (data) {
 	    retinaThumbUrl = _lychee$retinize.path,
 	    isPhoto = _lychee$retinize.isPhoto;
 
-	html += lychee.html(_templateObject7, data.id, data.thumbs[2], data.thumbs[1], data.thumbs[0], retinaThumbUrl, isPhoto, data.title, data.title, data.sysdate);
+	html += lychee.html(_templateObject10, data.id, data.thumbs[2], data.thumbs[1], data.thumbs[0], retinaThumbUrl, isPhoto, data.title, data.title, data.sysdate);
 
 	if (lychee.publicMode === false) {
 
-		html += lychee.html(_templateObject8, data.star === '1' ? 'badge--visible' : '', build.iconic('star'), data.public === '1' ? 'badge--visible' : '', build.iconic('eye'), data.unsorted === '1' ? 'badge--visible' : '', build.iconic('list'), data.recent === '1' ? 'badge--visible' : '', build.iconic('clock'), data.password === '1' ? 'badge--visible' : '', build.iconic('lock-locked'));
+		html += lychee.html(_templateObject11, data.star === '1' ? 'badge--visible' : '', build.iconic('star'), data.public === '1' ? 'badge--visible' : '', build.iconic('eye'), data.unsorted === '1' ? 'badge--visible' : '', build.iconic('list'), data.recent === '1' ? 'badge--visible' : '', build.iconic('clock'), data.password === '1' ? 'badge--visible' : '', build.iconic('lock-locked'));
 	}
 
 	html += '</div>';
@@ -119,15 +144,15 @@ build.photo = function (data) {
 	var _lychee$retinize2 = lychee.retinize(data.thumbUrl),
 	    retinaThumbUrl = _lychee$retinize2.path;
 
-	html += lychee.html(_templateObject9, data.album, data.id, data.thumbUrl, retinaThumbUrl, data.title, data.title);
+	html += lychee.html(_templateObject12, data.album, data.id, data.thumbUrl, retinaThumbUrl, data.title, data.title);
 
-	if (data.cameraDate === '1') html += lychee.html(_templateObject10, build.iconic('camera-slr'), data.sysdate);else html += lychee.html(_templateObject11, data.sysdate);
+	if (data.cameraDate === '1') html += lychee.html(_templateObject13, build.iconic('camera-slr'), data.sysdate);else html += lychee.html(_templateObject14, data.sysdate);
 
 	html += "</div>";
 
 	if (lychee.publicMode === false) {
 
-		html += lychee.html(_templateObject12, data.star === '1' ? 'badge--visible' : '', build.iconic('star'), data.public === '1' && album.json.public !== '1' ? 'badge--visible' : '', build.iconic('eye'));
+		html += lychee.html(_templateObject15, data.star === '1' ? 'badge--visible' : '', build.iconic('star'), data.public === '1' && album.json.public !== '1' ? 'badge--visible' : '', build.iconic('eye'));
 	}
 
 	html += "</div>";
@@ -142,10 +167,10 @@ build.imageview = function (data, visibleControls) {
 
 	if (hasMedium === false) {
 
-		html += lychee.html(_templateObject13, visibleControls === true ? '' : 'full', data.url);
+		html += lychee.html(_templateObject16, visibleControls === true ? '' : 'full', data.url);
 	} else {
 
-		html += lychee.html(_templateObject14, visibleControls === true ? '' : 'full', data.url, data.medium, data.url, data.width);
+		html += lychee.html(_templateObject17, visibleControls === true ? '' : 'full', data.url, data.medium, data.url, data.width);
 	}
 
 	html += "\n\t        <div class='arrow_wrapper arrow_wrapper--previous'><a id='previous'>" + build.iconic('caret-left') + "</a></div>\n\t        <div class='arrow_wrapper arrow_wrapper--next'><a id='next'>" + build.iconic('caret-right') + "</a></div>\n\t        ";
@@ -183,7 +208,7 @@ build.uploadModal = function (title, files) {
 
 	var html = '';
 
-	html += lychee.html(_templateObject15, title);
+	html += lychee.html(_templateObject18, title);
 
 	var i = 0;
 
@@ -193,7 +218,7 @@ build.uploadModal = function (title, files) {
 
 		if (file.name.length > 40) file.name = file.name.substr(0, 17) + '...' + file.name.substr(file.name.length - 20, 20);
 
-		html += lychee.html(_templateObject16, file.name);
+		html += lychee.html(_templateObject19, file.name);
 
 		i++;
 	}
@@ -212,7 +237,7 @@ build.tags = function (tags) {
 		tags = tags.split(',');
 
 		tags.forEach(function (tag, index, array) {
-			html += lychee.html(_templateObject17, tag, index, build.iconic('x'));
+			html += lychee.html(_templateObject20, tag, index, build.iconic('x'));
 		});
 	} else {
 
@@ -371,7 +396,7 @@ header.setTitle = function () {
 
 
 	var $title = header.dom('.header__title');
-	var html = lychee.html(_templateObject18, title, build.iconic('caret-bottom'));
+	var html = lychee.html(_templateObject21, title, build.iconic('caret-bottom'));
 
 	$title.html(html);
 
@@ -453,6 +478,39 @@ header.setEditable = function (editable) {
 
 	return true;
 };
+
+/**
+ * @description This module takes care of the header-image.
+ */
+
+headerImage = {
+
+	_dom: $('#header-image')
+
+};
+
+headerImage.load = function () {
+
+	//api.post('Photo::get', params, function(data) {
+
+	var data = {
+		showHeaderImage: true,
+		urlImage: 'http://demo.themetorium.net/html/sepia/assets/img/misc/page-header-bg-19.jpg',
+		haveHeaderTitle: true,
+		title: 'Homebook',
+		description: ''
+	};
+
+	if (data.showHeaderImage !== true) return true;
+
+	var headerImageBox = '';
+
+	headerImageBox = build.headerImage(data.urlImage, data.haveHeaderTitle, data.title, data.description);
+
+	headerImage._dom.html(headerImageBox);
+	//}
+};
+
 /**
  * @description This module takes care of the nav-links.
  */
@@ -917,12 +975,12 @@ sidebar.render = function (structure) {
 			if (value === '' || value == null) value = '-';
 
 			// Wrap span-element around value for easier selecting on change
-			value = lychee.html(_templateObject19, row.title.toLowerCase(), value);
+			value = lychee.html(_templateObject22, row.title.toLowerCase(), value);
 
 			// Add edit-icon to the value when editable
 			if (row.editable === true) value += ' ' + build.editIcon('edit_' + row.title.toLowerCase());
 
-			_html += lychee.html(_templateObject20, row.title, value);
+			_html += lychee.html(_templateObject23, row.title, value);
 		});
 
 		_html += "\n\t\t         </table>\n\t\t         ";
@@ -938,7 +996,7 @@ sidebar.render = function (structure) {
 		// Add edit-icon to the value when editable
 		if (section.editable === true) editable = build.editIcon('edit_tags');
 
-		_html += lychee.html(_templateObject21, section.title, section.title.toLowerCase(), section.value, editable);
+		_html += lychee.html(_templateObject24, section.title, section.title.toLowerCase(), section.value, editable);
 
 		return _html;
 	};
