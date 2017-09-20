@@ -15,7 +15,7 @@ headerImage.load = function() {
 		
 		let data = {
 			showHeaderImage		: true,
-			urlImage			: 'http://demo.themetorium.net/html/sepia/assets/img/misc/page-header-bg-19.jpg',
+			urlImage			: 'http://demo.themetorium.net/html/sepia/assets/img/misc/page-header-bg-3.jpg',
 			haveHeaderTitle		: true,
 			title 				: 'Homebook',
 			description			: ''
